@@ -1,0 +1,349 @@
+2025-04-03 15:09:22,256 - AgentInit - INFO - Initializing agent...
+2025-04-03 15:09:22,256 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 15:09:22,256 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 15:09:22,256 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 15:09:22,256 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 15:09:22,256 - AgentCore - INFO - New goal set: update_knowledge
+2025-04-03 15:09:22,256 - AgentCore - INFO - Creating plan to achieve goals
+2025-04-03 15:09:22,256 - AgentCore - INFO - Executing tool: crawl_sitemap
+2025-04-03 15:09:22,520 - AgentCrawler - INFO - Found 68 URLs to crawl from pydantic_ai
+2025-04-03 15:09:22,536 - AgentCrawler - INFO - Crawling 68 URLs in parallel (max 25 concurrent)
+2025-04-03 15:09:32,047 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/
+2025-04-03 15:09:32,049 - AgentCrawler - INFO - Saved: data\ai.pydantic.dev.md
+2025-04-03 15:09:32,049 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/agents/
+2025-04-03 15:09:32,049 - AgentCrawler - INFO - Saved: data\agents.md
+2025-04-03 15:09:32,049 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/cli/
+2025-04-03 15:09:32,051 - AgentCrawler - INFO - Saved: data\cli.md
+2025-04-03 15:09:32,051 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/common-tools/
+2025-04-03 15:09:32,051 - AgentCrawler - INFO - Saved: data\common-tools.md
+2025-04-03 15:09:32,051 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/contributing/
+2025-04-03 15:09:32,056 - AgentCrawler - INFO - Saved: data\contributing.md
+2025-04-03 15:09:32,056 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/dependencies/
+2025-04-03 15:09:32,057 - AgentCrawler - INFO - Saved: data\dependencies.md
+2025-04-03 15:09:32,057 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/evals/
+2025-04-03 15:09:32,058 - AgentCrawler - INFO - Saved: data\evals.md
+2025-04-03 15:09:32,058 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/graph/
+2025-04-03 15:09:32,059 - AgentCrawler - INFO - Saved: data\graph.md
+2025-04-03 15:09:32,060 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/help/
+2025-04-03 15:09:32,060 - AgentCrawler - INFO - Saved: data\help.md
+2025-04-03 15:09:32,061 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/input/
+2025-04-03 15:09:32,061 - AgentCrawler - INFO - Saved: data\input.md
+2025-04-03 15:09:32,062 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/install/
+2025-04-03 15:09:32,062 - AgentCrawler - INFO - Saved: data\install.md
+2025-04-03 15:09:32,062 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/logfire/
+2025-04-03 15:09:32,064 - AgentCrawler - INFO - Saved: data\logfire.md
+2025-04-03 15:09:32,064 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/message-history/
+2025-04-03 15:09:32,065 - AgentCrawler - INFO - Saved: data\message-history.md
+2025-04-03 15:09:32,065 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/models/
+2025-04-03 15:09:32,066 - AgentCrawler - INFO - Saved: data\models.md
+2025-04-03 15:09:32,066 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/multi-agent-applications/
+2025-04-03 15:09:32,069 - AgentCrawler - INFO - Saved: data\multi-agent-applications.md
+2025-04-03 15:09:32,069 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/results/
+2025-04-03 15:09:32,070 - AgentCrawler - INFO - Saved: data\results.md
+2025-04-03 15:09:32,070 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/testing/
+2025-04-03 15:09:32,070 - AgentCrawler - INFO - Saved: data\testing.md
+2025-04-03 15:09:32,070 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/tools/
+2025-04-03 15:09:32,073 - AgentCrawler - INFO - Saved: data\tools.md
+2025-04-03 15:09:32,073 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/troubleshooting/
+2025-04-03 15:09:32,075 - AgentCrawler - INFO - Saved: data\troubleshooting.md
+2025-04-03 15:09:32,075 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/agent/
+2025-04-03 15:09:32,076 - AgentCrawler - INFO - Saved: data\agent.md
+2025-04-03 15:09:32,076 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/common_tools/
+2025-04-03 15:09:32,076 - AgentCrawler - INFO - Saved: data\common_tools.md
+2025-04-03 15:09:32,076 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/exceptions/
+2025-04-03 15:09:32,079 - AgentCrawler - INFO - Saved: data\exceptions.md
+2025-04-03 15:09:32,079 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/format_as_xml/
+2025-04-03 15:09:32,080 - AgentCrawler - INFO - Saved: data\format_as_xml.md
+2025-04-03 15:09:32,080 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/mcp/
+2025-04-03 15:09:32,081 - AgentCrawler - INFO - Saved: data\mcp.md
+2025-04-03 15:09:32,081 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/messages/
+2025-04-03 15:09:32,084 - AgentCrawler - INFO - Saved: data\messages.md
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/providers/
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Saved: data\providers.md
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/result/
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Saved: data\result.md
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/settings/
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Saved: data\settings.md
+2025-04-03 15:09:38,586 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/tools/
+2025-04-03 15:09:38,600 - AgentCrawler - INFO - Saved: data\tools.md
+2025-04-03 15:09:38,600 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/usage/
+2025-04-03 15:09:38,601 - AgentCrawler - INFO - Saved: data\usage.md
+2025-04-03 15:09:38,601 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/anthropic/
+2025-04-03 15:09:38,602 - AgentCrawler - INFO - Saved: data\anthropic.md
+2025-04-03 15:09:38,602 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/base/
+2025-04-03 15:09:38,603 - AgentCrawler - INFO - Saved: data\base.md
+2025-04-03 15:09:38,603 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/bedrock/
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Saved: data\bedrock.md
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/cohere/
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Saved: data\cohere.md
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/fallback/
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Saved: data\fallback.md
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/function/
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Saved: data\function.md
+2025-04-03 15:09:38,604 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/gemini/
+2025-04-03 15:09:38,609 - AgentCrawler - INFO - Saved: data\gemini.md
+2025-04-03 15:09:38,609 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/groq/
+2025-04-03 15:09:38,609 - AgentCrawler - INFO - Saved: data\groq.md
+2025-04-03 15:09:38,609 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/instrumented/
+2025-04-03 15:09:38,610 - AgentCrawler - INFO - Saved: data\instrumented.md
+2025-04-03 15:09:38,610 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/mistral/
+2025-04-03 15:09:38,611 - AgentCrawler - INFO - Saved: data\mistral.md
+2025-04-03 15:09:38,611 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/openai/
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Saved: data\openai.md
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/test/
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Saved: data\test.md
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/models/wrapper/
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Saved: data\wrapper.md
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_evals/dataset/
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Saved: data\dataset.md
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_evals/evaluators/
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Saved: data\evaluators.md
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_evals/generation/
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Saved: data\generation.md
+2025-04-03 15:09:38,612 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_evals/otel/
+2025-04-03 15:09:38,619 - AgentCrawler - INFO - Saved: data\otel.md
+2025-04-03 15:09:38,619 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_evals/reporting/
+2025-04-03 15:09:38,620 - AgentCrawler - INFO - Saved: data\reporting.md
+2025-04-03 15:09:38,620 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/exceptions/
+2025-04-03 15:09:38,621 - AgentCrawler - INFO - Saved: data\exceptions.md
+2025-04-03 15:09:38,621 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/graph/
+2025-04-03 15:09:38,622 - AgentCrawler - INFO - Saved: data\graph.md
+2025-04-03 15:09:41,243 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/mermaid/
+2025-04-03 15:09:41,243 - AgentCrawler - INFO - Saved: data\mermaid.md
+2025-04-03 15:09:41,243 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/nodes/
+2025-04-03 15:09:41,248 - AgentCrawler - INFO - Saved: data\nodes.md
+2025-04-03 15:09:41,248 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/api/pydantic_graph/persistence/
+2025-04-03 15:09:41,250 - AgentCrawler - INFO - Saved: data\persistence.md
+2025-04-03 15:09:41,250 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/
+2025-04-03 15:09:41,251 - AgentCrawler - INFO - Saved: data\examples.md
+2025-04-03 15:09:41,251 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/bank-support/
+2025-04-03 15:09:41,252 - AgentCrawler - INFO - Saved: data\bank-support.md
+2025-04-03 15:09:41,252 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/chat-app/
+2025-04-03 15:09:41,253 - AgentCrawler - INFO - Saved: data\chat-app.md
+2025-04-03 15:09:41,253 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/flight-booking/
+2025-04-03 15:09:41,253 - AgentCrawler - INFO - Saved: data\flight-booking.md
+2025-04-03 15:09:41,254 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/pydantic-model/
+2025-04-03 15:09:41,254 - AgentCrawler - INFO - Saved: data\pydantic-model.md
+2025-04-03 15:09:41,254 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/question-graph/
+2025-04-03 15:09:41,259 - AgentCrawler - INFO - Saved: data\question-graph.md
+2025-04-03 15:09:41,259 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/rag/
+2025-04-03 15:09:41,260 - AgentCrawler - INFO - Saved: data\rag.md
+2025-04-03 15:09:41,260 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/sql-gen/
+2025-04-03 15:09:41,260 - AgentCrawler - INFO - Saved: data\sql-gen.md
+2025-04-03 15:09:41,260 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/stream-markdown/
+2025-04-03 15:09:41,261 - AgentCrawler - INFO - Saved: data\stream-markdown.md
+2025-04-03 15:09:41,261 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/stream-whales/
+2025-04-03 15:09:41,262 - AgentCrawler - INFO - Saved: data\stream-whales.md
+2025-04-03 15:09:41,262 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/examples/weather-agent/
+2025-04-03 15:09:41,262 - AgentCrawler - INFO - Saved: data\weather-agent.md
+2025-04-03 15:09:41,262 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/mcp/
+2025-04-03 15:09:41,263 - AgentCrawler - INFO - Saved: data\mcp.md
+2025-04-03 15:09:41,263 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/mcp/client/
+2025-04-03 15:09:41,264 - AgentCrawler - INFO - Saved: data\client.md
+2025-04-03 15:09:41,264 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/mcp/run-python/
+2025-04-03 15:09:41,265 - AgentCrawler - INFO - Saved: data\run-python.md
+2025-04-03 15:09:41,265 - AgentCrawler - INFO - Successfully crawled https://ai.pydantic.dev/mcp/server/
+2025-04-03 15:09:41,266 - AgentCrawler - INFO - Saved: data\server.md
+2025-04-03 15:09:41,419 - AgentCore - INFO - Tool crawl_sitemap executed successfully
+2025-04-03 15:09:41,419 - AgentCore - INFO - Executing tool: convert_to_text
+2025-04-03 15:09:41,653 - AgentConverter - INFO - Converted: data\agent.md -> text_data\agent.txt
+2025-04-03 15:09:41,764 - AgentConverter - INFO - Converted: data\agents.md -> text_data\agents.txt
+2025-04-03 15:09:41,819 - AgentConverter - INFO - Converted: data\ai.pydantic.dev.md -> text_data\ai.pydantic.dev.txt
+2025-04-03 15:09:41,920 - AgentConverter - INFO - Converted: data\anthropic.md -> text_data\anthropic.txt
+2025-04-03 15:09:42,012 - AgentConverter - INFO - Converted: data\bank-support.md -> text_data\bank-support.txt
+2025-04-03 15:09:42,115 - AgentConverter - INFO - Converted: data\base.md -> text_data\base.txt
+2025-04-03 15:09:42,203 - AgentConverter - INFO - Converted: data\bedrock.md -> text_data\bedrock.txt
+2025-04-03 15:09:42,305 - AgentConverter - INFO - Converted: data\chat-app.md -> text_data\chat-app.txt
+2025-04-03 15:09:42,390 - AgentConverter - INFO - Converted: data\cli.md -> text_data\cli.txt
+2025-04-03 15:09:42,449 - AgentConverter - INFO - Converted: data\client.md -> text_data\client.txt
+2025-04-03 15:09:42,546 - AgentConverter - INFO - Converted: data\cohere.md -> text_data\cohere.txt
+2025-04-03 15:09:42,631 - AgentConverter - INFO - Converted: data\common-tools.md -> text_data\common-tools.txt
+2025-04-03 15:09:42,708 - AgentConverter - INFO - Converted: data\common_tools.md -> text_data\common_tools.txt
+2025-04-03 15:09:42,789 - AgentConverter - INFO - Converted: data\contributing.md -> text_data\contributing.txt
+2025-04-03 15:09:42,947 - AgentConverter - INFO - Converted: data\dataset.md -> text_data\dataset.txt
+2025-04-03 15:09:43,037 - AgentConverter - INFO - Converted: data\dependencies.md -> text_data\dependencies.txt
+2025-04-03 15:09:43,092 - AgentConverter - INFO - Converted: data\evals.md -> text_data\evals.txt
+2025-04-03 15:09:43,217 - AgentConverter - INFO - Converted: data\evaluators.md -> text_data\evaluators.txt
+2025-04-03 15:09:43,307 - AgentConverter - INFO - Converted: data\examples.md -> text_data\examples.txt
+2025-04-03 15:09:43,380 - AgentConverter - INFO - Converted: data\exceptions.md -> text_data\exceptions.txt
+2025-04-03 15:09:43,459 - AgentConverter - INFO - Converted: data\fallback.md -> text_data\fallback.txt
+2025-04-03 15:09:43,535 - AgentConverter - INFO - Converted: data\flight-booking.md -> text_data\flight-booking.txt
+2025-04-03 15:09:43,621 - AgentConverter - INFO - Converted: data\format_as_xml.md -> text_data\format_as_xml.txt
+2025-04-03 15:09:43,725 - AgentConverter - INFO - Converted: data\function.md -> text_data\function.txt
+2025-04-03 15:09:43,816 - AgentConverter - INFO - Converted: data\gemini.md -> text_data\gemini.txt
+2025-04-03 15:09:43,900 - AgentConverter - INFO - Converted: data\generation.md -> text_data\generation.txt
+2025-04-03 15:09:44,075 - AgentConverter - INFO - Converted: data\graph.md -> text_data\graph.txt
+2025-04-03 15:09:44,166 - AgentConverter - INFO - Converted: data\groq.md -> text_data\groq.txt
+2025-04-03 15:09:44,245 - AgentConverter - INFO - Converted: data\help.md -> text_data\help.txt
+2025-04-03 15:09:44,318 - AgentConverter - INFO - Converted: data\input.md -> text_data\input.txt
+2025-04-03 15:09:44,396 - AgentConverter - INFO - Converted: data\install.md -> text_data\install.txt
+2025-04-03 15:09:44,485 - AgentConverter - INFO - Converted: data\instrumented.md -> text_data\instrumented.txt
+2025-04-03 15:09:44,566 - AgentConverter - INFO - Converted: data\logfire.md -> text_data\logfire.txt
+2025-04-03 15:09:44,629 - AgentConverter - INFO - Converted: data\mcp.md -> text_data\mcp.txt
+2025-04-03 15:09:44,731 - AgentConverter - INFO - Converted: data\mermaid.md -> text_data\mermaid.txt
+2025-04-03 15:09:44,807 - AgentConverter - INFO - Converted: data\message-history.md -> text_data\message-history.txt
+2025-04-03 15:09:44,965 - AgentConverter - INFO - Converted: data\messages.md -> text_data\messages.txt
+2025-04-03 15:09:45,080 - AgentConverter - INFO - Converted: data\mistral.md -> text_data\mistral.txt
+2025-04-03 15:09:45,196 - AgentConverter - INFO - Converted: data\models.md -> text_data\models.txt
+2025-04-03 15:09:45,291 - AgentConverter - INFO - Converted: data\multi-agent-applications.md -> text_data\multi-agent-applications.txt
+2025-04-03 15:09:45,393 - AgentConverter - INFO - Converted: data\nodes.md -> text_data\nodes.txt
+2025-04-03 15:09:45,529 - AgentConverter - INFO - Converted: data\openai.md -> text_data\openai.txt
+2025-04-03 15:09:45,654 - AgentConverter - INFO - Converted: data\otel.md -> text_data\otel.txt
+2025-04-03 15:09:45,779 - AgentConverter - INFO - Converted: data\persistence.md -> text_data\persistence.txt
+2025-04-03 15:09:45,942 - AgentConverter - INFO - Converted: data\providers.md -> text_data\providers.txt
+2025-04-03 15:09:46,015 - AgentConverter - INFO - Converted: data\pydantic-model.md -> text_data\pydantic-model.txt
+2025-04-03 15:09:46,092 - AgentConverter - INFO - Converted: data\question-graph.md -> text_data\question-graph.txt
+2025-04-03 15:09:46,171 - AgentConverter - INFO - Converted: data\rag.md -> text_data\rag.txt
+2025-04-03 15:09:46,297 - AgentConverter - INFO - Converted: data\reporting.md -> text_data\reporting.txt
+2025-04-03 15:09:46,417 - AgentConverter - INFO - Converted: data\result.md -> text_data\result.txt
+2025-04-03 15:09:46,498 - AgentConverter - INFO - Converted: data\results.md -> text_data\results.txt
+2025-04-03 15:09:46,564 - AgentConverter - INFO - Converted: data\run-python.md -> text_data\run-python.txt
+2025-04-03 15:09:46,641 - AgentConverter - INFO - Converted: data\server.md -> text_data\server.txt
+2025-04-03 15:09:46,720 - AgentConverter - INFO - Converted: data\settings.md -> text_data\settings.txt
+2025-04-03 15:09:46,821 - AgentConverter - INFO - Converted: data\sql-gen.md -> text_data\sql-gen.txt
+2025-04-03 15:09:46,897 - AgentConverter - INFO - Converted: data\stream-markdown.md -> text_data\stream-markdown.txt
+2025-04-03 15:09:46,958 - AgentConverter - INFO - Converted: data\stream-whales.md -> text_data\stream-whales.txt
+2025-04-03 15:09:47,060 - AgentConverter - INFO - Converted: data\test.md -> text_data\test.txt
+2025-04-03 15:09:47,127 - AgentConverter - INFO - Converted: data\testing.md -> text_data\testing.txt
+2025-04-03 15:09:47,249 - AgentConverter - INFO - Converted: data\tools.md -> text_data\tools.txt
+2025-04-03 15:09:47,327 - AgentConverter - INFO - Converted: data\troubleshooting.md -> text_data\troubleshooting.txt
+2025-04-03 15:09:47,424 - AgentConverter - INFO - Converted: data\usage.md -> text_data\usage.txt
+2025-04-03 15:09:47,503 - AgentConverter - INFO - Converted: data\weather-agent.md -> text_data\weather-agent.txt
+2025-04-03 15:09:47,572 - AgentConverter - INFO - Converted: data\wrapper.md -> text_data\wrapper.txt
+2025-04-03 15:09:47,572 - AgentCore - INFO - Tool convert_to_text executed successfully
+2025-04-03 15:09:47,572 - AgentCore - INFO - Executing tool: update_database
+2025-04-03 15:09:47,572 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 15:09:52,332 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 15:09:52,332 - AgentDatabase - INFO - Created new knowledge graph
+2025-04-03 15:09:53,845 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-03 15:09:54,295 - AgentDatabase - INFO - Adding 3043 new documents to database
+2025-04-03 16:58:09,632 - AgentDatabase - INFO - Saved knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 16:58:09,632 - AgentCore - INFO - Tool update_database executed successfully
+2025-04-03 16:58:09,632 - AgentInit - INFO - Agent initialization complete!
+2025-04-03 16:59:27,251 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 16:59:27,251 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 16:59:27,251 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 16:59:27,251 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 16:59:36,670 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 16:59:36,670 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 16:59:36,670 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 16:59:36,674 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 16:59:48,440 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 16:59:48,440 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 16:59:48,440 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 16:59:48,440 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:02:23,161 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:02:23,161 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:02:23,161 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:02:23,161 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:02:23,169 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 17:02:25,244 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 17:02:25,299 - AgentDatabase - INFO - Loaded knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 17:02:25,563 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-03 17:03:24,099 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:03:24,100 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:03:24,100 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:03:24,100 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:03:35,502 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:03:35,502 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:03:35,502 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:03:35,502 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:04:54,584 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:04:54,588 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:04:54,588 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:04:54,588 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:05:46,274 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:05:46,274 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:05:46,275 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:05:46,275 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:05:50,142 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:05:50,143 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:05:50,143 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:05:50,143 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:05:59,263 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:05:59,264 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:05:59,265 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:05:59,265 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:15:28,768 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:15:28,768 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:15:28,768 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:15:28,768 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:15:46,212 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:15:46,213 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:15:46,213 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:15:46,213 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:15:46,220 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 17:15:49,205 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 17:15:49,262 - AgentDatabase - INFO - Loaded knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 17:15:49,576 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-03 17:17:14,837 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:17:14,837 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:17:14,837 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:17:14,837 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:17:20,020 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:17:20,020 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:17:20,020 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:17:20,020 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:17:20,027 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 17:17:22,101 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 17:17:22,165 - AgentDatabase - INFO - Loaded knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 17:17:22,518 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-03 17:18:48,923 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:18:48,923 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:18:48,923 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:18:48,923 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:18:48,933 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 17:18:51,019 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 17:18:51,064 - AgentDatabase - INFO - Loaded knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 17:23:41,338 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:23:41,339 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:23:41,339 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:23:41,339 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:23:42,621 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:23:42,621 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:23:42,621 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:23:42,621 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:23:42,704 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:23:42,704 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:23:42,704 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:23:42,704 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:24:52,755 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:24:52,755 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:24:52,758 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:24:52,758 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:25:44,333 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:25:44,333 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:25:44,334 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:25:44,334 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:25:44,347 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 17:25:47,778 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 17:25:47,826 - AgentDatabase - INFO - Loaded knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 17:25:48,182 - backoff - INFO - Backing off send_request(...) for 0.4s (requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2025-04-03 17:29:50,421 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:29:50,421 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:29:50,422 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:29:50,422 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:29:55,121 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:29:55,122 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:29:55,122 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:29:55,122 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:45:53,970 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:45:53,971 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:45:53,971 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:45:53,971 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 17:46:09,297 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 17:46:09,297 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 17:46:09,297 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 17:46:09,297 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 20:04:14,414 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 20:04:14,414 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 20:04:14,415 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 20:04:14,415 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 20:04:20,905 - AgentCore - INFO - Registered tool: crawl_sitemap
+2025-04-03 20:04:20,906 - AgentCore - INFO - Registered tool: convert_to_text
+2025-04-03 20:04:20,906 - AgentCore - INFO - Registered tool: update_database
+2025-04-03 20:04:20,906 - AgentCore - INFO - Registered tool: query_database
+2025-04-03 20:04:20,913 - EmbeddingFunction - INFO - Initializing embedding model: nomic-embed-text
+2025-04-03 20:04:25,035 - EmbeddingFunction - INFO - Successfully initialized nomic-embed-text embedding model
+2025-04-03 20:04:25,117 - AgentDatabase - INFO - Loaded knowledge graph with 6000 nodes and 13959 edges
+2025-04-03 20:04:25,649 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.

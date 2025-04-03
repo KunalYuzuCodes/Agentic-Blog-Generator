@@ -1,0 +1,186 @@
+Skip to content
+
+[ ![logo](../../img/logo-white.svg) ](../.. "PydanticAI")
+
+PydanticAI
+
+Pydantic Model
+
+Type to start searching
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+[ ![logo](../../img/logo-white.svg) ](../.. "PydanticAI") PydanticAI
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+  * [ Introduction  ](../..)
+  * [ Installation  ](../../install/)
+  * [ Getting Help  ](../../help/)
+  * [ Contributing  ](../../contributing/)
+  * [ Troubleshooting  ](../../troubleshooting/)
+  * Documentation  Documentation 
+    * [ Agents  ](../../agents/)
+    * [ Models  ](../../models/)
+    * [ Dependencies  ](../../dependencies/)
+    * [ Function Tools  ](../../tools/)
+    * [ Common Tools  ](../../common-tools/)
+    * [ Results  ](../../results/)
+    * [ Messages and chat history  ](../../message-history/)
+    * [ Unit testing  ](../../testing/)
+    * [ Debugging and Monitoring  ](../../logfire/)
+    * [ Multi-agent Applications  ](../../multi-agent-applications/)
+    * [ Graphs  ](../../graph/)
+    * [ Evals  ](../../evals/)
+    * [ Image, Audio & Document Input  ](../../input/)
+    * [ MCP  ](../../mcp/)
+
+MCP
+
+      * [ Client  ](../../mcp/client/)
+      * [ Server  ](../../mcp/server/)
+      * [ MCP Run Python  ](../../mcp/run-python/)
+    * [ Command Line Interface (CLI)  ](../../cli/)
+  * [ Examples  ](../)
+
+Examples
+
+    * Pydantic Model  [ Pydantic Model  ](./) Table of contents 
+      * Running the Example 
+      * Example Code 
+    * [ Weather agent  ](../weather-agent/)
+    * [ Bank support  ](../bank-support/)
+    * [ SQL Generation  ](../sql-gen/)
+    * [ Flight booking  ](../flight-booking/)
+    * [ RAG  ](../rag/)
+    * [ Stream markdown  ](../stream-markdown/)
+    * [ Stream whales  ](../stream-whales/)
+    * [ Chat App with FastAPI  ](../chat-app/)
+    * [ Question Graph  ](../question-graph/)
+  * API Reference  API Reference 
+    * [ pydantic_ai.agent  ](../../api/agent/)
+    * [ pydantic_ai.tools  ](../../api/tools/)
+    * [ pydantic_ai.common_tools  ](../../api/common_tools/)
+    * [ pydantic_ai.result  ](../../api/result/)
+    * [ pydantic_ai.messages  ](../../api/messages/)
+    * [ pydantic_ai.exceptions  ](../../api/exceptions/)
+    * [ pydantic_ai.settings  ](../../api/settings/)
+    * [ pydantic_ai.usage  ](../../api/usage/)
+    * [ pydantic_ai.mcp  ](../../api/mcp/)
+    * [ pydantic_ai.format_as_xml  ](../../api/format_as_xml/)
+    * [ pydantic_ai.models  ](../../api/models/base/)
+    * [ pydantic_ai.models.openai  ](../../api/models/openai/)
+    * [ pydantic_ai.models.anthropic  ](../../api/models/anthropic/)
+    * [ pydantic_ai.models.bedrock  ](../../api/models/bedrock/)
+    * [ pydantic_ai.models.cohere  ](../../api/models/cohere/)
+    * [ pydantic_ai.models.gemini  ](../../api/models/gemini/)
+    * [ pydantic_ai.models.groq  ](../../api/models/groq/)
+    * [ pydantic_ai.models.instrumented  ](../../api/models/instrumented/)
+    * [ pydantic_ai.models.mistral  ](../../api/models/mistral/)
+    * [ pydantic_ai.models.test  ](../../api/models/test/)
+    * [ pydantic_ai.models.function  ](../../api/models/function/)
+    * [ pydantic_ai.models.fallback  ](../../api/models/fallback/)
+    * [ pydantic_ai.models.wrapper  ](../../api/models/wrapper/)
+    * [ pydantic_ai.providers  ](../../api/providers/)
+    * [ pydantic_graph  ](../../api/pydantic_graph/graph/)
+    * [ pydantic_graph.nodes  ](../../api/pydantic_graph/nodes/)
+    * [ pydantic_graph.persistence  ](../../api/pydantic_graph/persistence/)
+    * [ pydantic_graph.mermaid  ](../../api/pydantic_graph/mermaid/)
+    * [ pydantic_graph.exceptions  ](../../api/pydantic_graph/exceptions/)
+    * [ pydantic_evals.dataset  ](../../api/pydantic_evals/dataset/)
+    * [ pydantic_evals.evaluators  ](../../api/pydantic_evals/evaluators/)
+    * [ pydantic_evals.reporting  ](../../api/pydantic_evals/reporting/)
+    * [ pydantic_evals.otel  ](../../api/pydantic_evals/otel/)
+    * [ pydantic_evals.generation  ](../../api/pydantic_evals/generation/)
+
+Table of contents
+
+  * Running the Example 
+  * Example Code 
+
+# Pydantic Model
+
+Simple example of using PydanticAI to construct a Pydantic model from a text
+input.
+
+Demonstrates:
+
+  * [structured `result_type`](../../results/#structured-result-validation)
+
+## Running the Example
+
+With [dependencies installed and environment variables set](../#usage), run:
+
+pipuv
+
+    
+    
+    python -m pydantic_ai_examples.pydantic_model
+    
+    
+    
+    uv run -m pydantic_ai_examples.pydantic_model
+    
+
+This examples uses `openai:gpt-4o` by default, but it works well with other
+models, e.g. you can run it with Gemini using:
+
+pipuv
+
+    
+    
+    PYDANTIC_AI_MODEL=gemini-1.5-pro python -m pydantic_ai_examples.pydantic_model
+    
+    
+    
+    PYDANTIC_AI_MODEL=gemini-1.5-pro uv run -m pydantic_ai_examples.pydantic_model
+    
+
+(or `PYDANTIC_AI_MODEL=gemini-1.5-flash ...`)
+
+## Example Code
+
+pydantic_model.py
+
+    
+    
+    import os
+    
+    import logfire
+    from pydantic import BaseModel
+    
+    from pydantic_ai import Agent
+    
+    # 'if-token-present' means nothing will be sent (and the example will work) if you don't have logfire configured
+    logfire.configure(send_to_logfire='if-token-present')
+    
+    
+    class MyModel(BaseModel):
+        city: str
+        country: str
+    
+    
+    model = os.getenv('PYDANTIC_AI_MODEL', 'openai:gpt-4o')
+    print(f'Using model: {model}')
+    agent = Agent(model, result_type=MyModel, instrument=True)
+    
+    if __name__ == '__main__':
+        result = agent.run_sync('The windy city in the US of A.')
+        print(result.data)
+        print(result.usage())
+    
+
+© Pydantic Services Inc. 2024 to present
+

@@ -1,0 +1,600 @@
+Skip to content
+
+[ ![logo](../../../img/logo-white.svg) ](../../.. "PydanticAI")
+
+PydanticAI
+
+pydantic_ai.models.fallback
+
+Type to start searching
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+[ ![logo](../../../img/logo-white.svg) ](../../.. "PydanticAI") PydanticAI
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+  * [ Introduction  ](../../..)
+  * [ Installation  ](../../../install/)
+  * [ Getting Help  ](../../../help/)
+  * [ Contributing  ](../../../contributing/)
+  * [ Troubleshooting  ](../../../troubleshooting/)
+  * Documentation  Documentation 
+    * [ Agents  ](../../../agents/)
+    * [ Models  ](../../../models/)
+    * [ Dependencies  ](../../../dependencies/)
+    * [ Function Tools  ](../../../tools/)
+    * [ Common Tools  ](../../../common-tools/)
+    * [ Results  ](../../../results/)
+    * [ Messages and chat history  ](../../../message-history/)
+    * [ Unit testing  ](../../../testing/)
+    * [ Debugging and Monitoring  ](../../../logfire/)
+    * [ Multi-agent Applications  ](../../../multi-agent-applications/)
+    * [ Graphs  ](../../../graph/)
+    * [ Evals  ](../../../evals/)
+    * [ Image, Audio & Document Input  ](../../../input/)
+    * [ MCP  ](../../../mcp/)
+
+MCP
+
+      * [ Client  ](../../../mcp/client/)
+      * [ Server  ](../../../mcp/server/)
+      * [ MCP Run Python  ](../../../mcp/run-python/)
+    * [ Command Line Interface (CLI)  ](../../../cli/)
+  * [ Examples  ](../../../examples/)
+
+Examples
+
+    * [ Pydantic Model  ](../../../examples/pydantic-model/)
+    * [ Weather agent  ](../../../examples/weather-agent/)
+    * [ Bank support  ](../../../examples/bank-support/)
+    * [ SQL Generation  ](../../../examples/sql-gen/)
+    * [ Flight booking  ](../../../examples/flight-booking/)
+    * [ RAG  ](../../../examples/rag/)
+    * [ Stream markdown  ](../../../examples/stream-markdown/)
+    * [ Stream whales  ](../../../examples/stream-whales/)
+    * [ Chat App with FastAPI  ](../../../examples/chat-app/)
+    * [ Question Graph  ](../../../examples/question-graph/)
+  * API Reference  API Reference 
+    * [ pydantic_ai.agent  ](../../agent/)
+    * [ pydantic_ai.tools  ](../../tools/)
+    * [ pydantic_ai.common_tools  ](../../common_tools/)
+    * [ pydantic_ai.result  ](../../result/)
+    * [ pydantic_ai.messages  ](../../messages/)
+    * [ pydantic_ai.exceptions  ](../../exceptions/)
+    * [ pydantic_ai.settings  ](../../settings/)
+    * [ pydantic_ai.usage  ](../../usage/)
+    * [ pydantic_ai.mcp  ](../../mcp/)
+    * [ pydantic_ai.format_as_xml  ](../../format_as_xml/)
+    * [ pydantic_ai.models  ](../base/)
+    * [ pydantic_ai.models.openai  ](../openai/)
+    * [ pydantic_ai.models.anthropic  ](../anthropic/)
+    * [ pydantic_ai.models.bedrock  ](../bedrock/)
+    * [ pydantic_ai.models.cohere  ](../cohere/)
+    * [ pydantic_ai.models.gemini  ](../gemini/)
+    * [ pydantic_ai.models.groq  ](../groq/)
+    * [ pydantic_ai.models.instrumented  ](../instrumented/)
+    * [ pydantic_ai.models.mistral  ](../mistral/)
+    * [ pydantic_ai.models.test  ](../test/)
+    * [ pydantic_ai.models.function  ](../function/)
+    * pydantic_ai.models.fallback  [ pydantic_ai.models.fallback  ](./) Table of contents 
+      * fallback 
+      * FallbackModel 
+        * __init__ 
+        * request 
+        * request_stream 
+        * model_name 
+    * [ pydantic_ai.models.wrapper  ](../wrapper/)
+    * [ pydantic_ai.providers  ](../../providers/)
+    * [ pydantic_graph  ](../../pydantic_graph/graph/)
+    * [ pydantic_graph.nodes  ](../../pydantic_graph/nodes/)
+    * [ pydantic_graph.persistence  ](../../pydantic_graph/persistence/)
+    * [ pydantic_graph.mermaid  ](../../pydantic_graph/mermaid/)
+    * [ pydantic_graph.exceptions  ](../../pydantic_graph/exceptions/)
+    * [ pydantic_evals.dataset  ](../../pydantic_evals/dataset/)
+    * [ pydantic_evals.evaluators  ](../../pydantic_evals/evaluators/)
+    * [ pydantic_evals.reporting  ](../../pydantic_evals/reporting/)
+    * [ pydantic_evals.otel  ](../../pydantic_evals/otel/)
+    * [ pydantic_evals.generation  ](../../pydantic_evals/generation/)
+
+Table of contents
+
+  * fallback 
+  * FallbackModel 
+    * __init__ 
+    * request 
+    * request_stream 
+    * model_name 
+
+# pydantic_ai.models.fallback
+
+###  FallbackModel `dataclass`
+
+Bases: `[Model](../base/#pydantic_ai.models.Model "pydantic_ai.models.Model")`
+
+A model that uses one or more fallback models upon failure.
+
+Apart from `__init__`, all methods are private or match those of the base
+class.
+
+Source code in `pydantic_ai_slim/pydantic_ai/models/fallback.py`
+
+    
+    
+     21
+     22
+     23
+     24
+     25
+     26
+     27
+     28
+     29
+     30
+     31
+     32
+     33
+     34
+     35
+     36
+     37
+     38
+     39
+     40
+     41
+     42
+     43
+     44
+     45
+     46
+     47
+     48
+     49
+     50
+     51
+     52
+     53
+     54
+     55
+     56
+     57
+     58
+     59
+     60
+     61
+     62
+     63
+     64
+     65
+     66
+     67
+     68
+     69
+     70
+     71
+     72
+     73
+     74
+     75
+     76
+     77
+     78
+     79
+     80
+     81
+     82
+     83
+     84
+     85
+     86
+     87
+     88
+     89
+     90
+     91
+     92
+     93
+     94
+     95
+     96
+     97
+     98
+     99
+    100
+    101
+    102
+    103
+    104
+    105
+    106
+    107
+    108
+    109
+    110
+    111
+    112
+    113
+    114
+    115
+    116
+    117
+    118
+    119
+    120
+    121
+    122
+    123
+    124
+    125
+    126
+
+|
+
+    
+    
+    @dataclass(init=False)
+    class FallbackModel(Model):
+        """A model that uses one or more fallback models upon failure.
+    
+        Apart from `__init__`, all methods are private or match those of the base class.
+        """
+    
+        models: list[Model]
+    
+        _model_name: str = field(repr=False)
+        _fallback_on: Callable[[Exception], bool]
+    
+        def __init__(
+            self,
+            default_model: Model | KnownModelName,
+            *fallback_models: Model | KnownModelName,
+            fallback_on: Callable[[Exception], bool] | tuple[type[Exception], ...] = (ModelHTTPError,),
+        ):
+            """Initialize a fallback model instance.
+    
+            Args:
+                default_model: The name or instance of the default model to use.
+                fallback_models: The names or instances of the fallback models to use upon failure.
+                fallback_on: A callable or tuple of exceptions that should trigger a fallback.
+            """
+            self.models = [infer_model(default_model), *[infer_model(m) for m in fallback_models]]
+    
+            if isinstance(fallback_on, tuple):
+                self._fallback_on = _default_fallback_condition_factory(fallback_on)
+            else:
+                self._fallback_on = fallback_on
+    
+        async def request(
+            self,
+            messages: list[ModelMessage],
+            model_settings: ModelSettings | None,
+            model_request_parameters: ModelRequestParameters,
+        ) -> tuple[ModelResponse, Usage]:
+            """Try each model in sequence until one succeeds.
+    
+            In case of failure, raise a FallbackExceptionGroup with all exceptions.
+            """
+            exceptions: list[Exception] = []
+    
+            for model in self.models:
+                try:
+                    response, usage = await model.request(messages, model_settings, model_request_parameters)
+                except Exception as exc:
+                    if self._fallback_on(exc):
+                        exceptions.append(exc)
+                        continue
+                    raise exc
+    
+                self._set_span_attributes(model)
+                return response, usage
+    
+            raise FallbackExceptionGroup('All models from FallbackModel failed', exceptions)
+    
+        @asynccontextmanager
+        async def request_stream(
+            self,
+            messages: list[ModelMessage],
+            model_settings: ModelSettings | None,
+            model_request_parameters: ModelRequestParameters,
+        ) -> AsyncIterator[StreamedResponse]:
+            """Try each model in sequence until one succeeds."""
+            exceptions: list[Exception] = []
+    
+            for model in self.models:
+                async with AsyncExitStack() as stack:
+                    try:
+                        response = await stack.enter_async_context(
+                            model.request_stream(messages, model_settings, model_request_parameters)
+                        )
+                    except Exception as exc:
+                        if self._fallback_on(exc):
+                            exceptions.append(exc)
+                            continue
+                        raise exc
+    
+                    self._set_span_attributes(model)
+                    yield response
+                    return
+    
+            raise FallbackExceptionGroup('All models from FallbackModel failed', exceptions)
+    
+        def _set_span_attributes(self, model: Model):
+            with suppress(Exception):
+                span = get_current_span()
+                if span.is_recording():
+                    attributes = getattr(span, 'attributes', {})
+                    if attributes.get('gen_ai.request.model') == self.model_name:
+                        span.set_attributes(InstrumentedModel.model_attributes(model))
+    
+        @property
+        def model_name(self) -> str:
+            """The model name."""
+            return f'fallback:{",".join(model.model_name for model in self.models)}'
+    
+        @property
+        def system(self) -> str:
+            return f'fallback:{",".join(model.system for model in self.models)}'
+    
+        @property
+        def base_url(self) -> str | None:
+            return self.models[0].base_url
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(
+        default_model: [Model](../base/#pydantic_ai.models.Model "pydantic_ai.models.Model") | [KnownModelName](../base/#pydantic_ai.models.KnownModelName "pydantic_ai.models.KnownModelName"),
+        *fallback_models: [Model](../base/#pydantic_ai.models.Model "pydantic_ai.models.Model") | [KnownModelName](../base/#pydantic_ai.models.KnownModelName "pydantic_ai.models.KnownModelName"),
+        fallback_on: (
+            [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "typing.Callable")[[[Exception](https://docs.python.org/3/library/exceptions.html#Exception)], [bool](https://docs.python.org/3/library/functions.html#bool)]
+            | [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[[type](https://docs.python.org/3/library/functions.html#type)[[Exception](https://docs.python.org/3/library/exceptions.html#Exception)], ...]
+        ) = ([ModelHTTPError](../../exceptions/#pydantic_ai.exceptions.ModelHTTPError "pydantic_ai.exceptions.ModelHTTPError"),)
+    )
+    
+
+Initialize a fallback model instance.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`default_model` |  `[Model](../base/#pydantic_ai.models.Model "pydantic_ai.models.Model") | [KnownModelName](../base/#pydantic_ai.models.KnownModelName "pydantic_ai.models.KnownModelName")` |  The name or instance of the default model to use. |  _required_  
+`fallback_models` |  `[Model](../base/#pydantic_ai.models.Model "pydantic_ai.models.Model") | [KnownModelName](../base/#pydantic_ai.models.KnownModelName "pydantic_ai.models.KnownModelName")` |  The names or instances of the fallback models to use upon failure. |  `()`  
+`fallback_on` |  `[Callable](https://docs.python.org/3/library/typing.html#typing.Callable "typing.Callable")[[[Exception](https://docs.python.org/3/library/exceptions.html#Exception)], [bool](https://docs.python.org/3/library/functions.html#bool)] | [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[[type](https://docs.python.org/3/library/functions.html#type)[[Exception](https://docs.python.org/3/library/exceptions.html#Exception)], ...]` |  A callable or tuple of exceptions that should trigger a fallback. |  `([ModelHTTPError](../../exceptions/#pydantic_ai.exceptions.ModelHTTPError "pydantic_ai.exceptions.ModelHTTPError"),)`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/models/fallback.py`
+
+    
+    
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+
+|
+
+    
+    
+    def __init__(
+        self,
+        default_model: Model | KnownModelName,
+        *fallback_models: Model | KnownModelName,
+        fallback_on: Callable[[Exception], bool] | tuple[type[Exception], ...] = (ModelHTTPError,),
+    ):
+        """Initialize a fallback model instance.
+    
+        Args:
+            default_model: The name or instance of the default model to use.
+            fallback_models: The names or instances of the fallback models to use upon failure.
+            fallback_on: A callable or tuple of exceptions that should trigger a fallback.
+        """
+        self.models = [infer_model(default_model), *[infer_model(m) for m in fallback_models]]
+    
+        if isinstance(fallback_on, tuple):
+            self._fallback_on = _default_fallback_condition_factory(fallback_on)
+        else:
+            self._fallback_on = fallback_on
+      
+  
+---|---  
+  
+####  request `async`
+
+    
+    
+    request(
+        messages: [list](https://docs.python.org/3/library/stdtypes.html#list)[[ModelMessage](../../messages/#pydantic_ai.messages.ModelMessage "pydantic_ai.messages.ModelMessage")],
+        model_settings: [ModelSettings](../../settings/#pydantic_ai.settings.ModelSettings "pydantic_ai.settings.ModelSettings") | None,
+        model_request_parameters: [ModelRequestParameters](../base/#pydantic_ai.models.ModelRequestParameters "pydantic_ai.models.ModelRequestParameters"),
+    ) -> [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[[ModelResponse](../../messages/#pydantic_ai.messages.ModelResponse "pydantic_ai.messages.ModelResponse"), [Usage](../../usage/#pydantic_ai.usage.Usage "pydantic_ai.usage.Usage")]
+    
+
+Try each model in sequence until one succeeds.
+
+In case of failure, raise a FallbackExceptionGroup with all exceptions.
+
+Source code in `pydantic_ai_slim/pydantic_ai/models/fallback.py`
+
+    
+    
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+    76
+    77
+
+|
+
+    
+    
+    async def request(
+        self,
+        messages: list[ModelMessage],
+        model_settings: ModelSettings | None,
+        model_request_parameters: ModelRequestParameters,
+    ) -> tuple[ModelResponse, Usage]:
+        """Try each model in sequence until one succeeds.
+    
+        In case of failure, raise a FallbackExceptionGroup with all exceptions.
+        """
+        exceptions: list[Exception] = []
+    
+        for model in self.models:
+            try:
+                response, usage = await model.request(messages, model_settings, model_request_parameters)
+            except Exception as exc:
+                if self._fallback_on(exc):
+                    exceptions.append(exc)
+                    continue
+                raise exc
+    
+            self._set_span_attributes(model)
+            return response, usage
+    
+        raise FallbackExceptionGroup('All models from FallbackModel failed', exceptions)
+      
+  
+---|---  
+  
+####  request_stream `async`
+
+    
+    
+    request_stream(
+        messages: [list](https://docs.python.org/3/library/stdtypes.html#list)[[ModelMessage](../../messages/#pydantic_ai.messages.ModelMessage "pydantic_ai.messages.ModelMessage")],
+        model_settings: [ModelSettings](../../settings/#pydantic_ai.settings.ModelSettings "pydantic_ai.settings.ModelSettings") | None,
+        model_request_parameters: [ModelRequestParameters](../base/#pydantic_ai.models.ModelRequestParameters "pydantic_ai.models.ModelRequestParameters"),
+    ) -> [AsyncIterator](https://docs.python.org/3/library/collections.abc.html#collections.abc.AsyncIterator "collections.abc.AsyncIterator")[[StreamedResponse](../base/#pydantic_ai.models.StreamedResponse "pydantic_ai.models.StreamedResponse")]
+    
+
+Try each model in sequence until one succeeds.
+
+Source code in `pydantic_ai_slim/pydantic_ai/models/fallback.py`
+
+    
+    
+     79
+     80
+     81
+     82
+     83
+     84
+     85
+     86
+     87
+     88
+     89
+     90
+     91
+     92
+     93
+     94
+     95
+     96
+     97
+     98
+     99
+    100
+    101
+    102
+    103
+    104
+    105
+
+|
+
+    
+    
+    @asynccontextmanager
+    async def request_stream(
+        self,
+        messages: list[ModelMessage],
+        model_settings: ModelSettings | None,
+        model_request_parameters: ModelRequestParameters,
+    ) -> AsyncIterator[StreamedResponse]:
+        """Try each model in sequence until one succeeds."""
+        exceptions: list[Exception] = []
+    
+        for model in self.models:
+            async with AsyncExitStack() as stack:
+                try:
+                    response = await stack.enter_async_context(
+                        model.request_stream(messages, model_settings, model_request_parameters)
+                    )
+                except Exception as exc:
+                    if self._fallback_on(exc):
+                        exceptions.append(exc)
+                        continue
+                    raise exc
+    
+                self._set_span_attributes(model)
+                yield response
+                return
+    
+        raise FallbackExceptionGroup('All models from FallbackModel failed', exceptions)
+      
+  
+---|---  
+  
+####  model_name `property`
+
+    
+    
+    model_name: [str](https://docs.python.org/3/library/stdtypes.html#str)
+    
+
+The model name.
+
+© Pydantic Services Inc. 2024 to present
+

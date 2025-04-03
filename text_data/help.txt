@@ -1,0 +1,134 @@
+Skip to content
+
+[ ![logo](../img/logo-white.svg) ](.. "PydanticAI")
+
+PydanticAI
+
+Getting Help
+
+Type to start searching
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+[ ![logo](../img/logo-white.svg) ](.. "PydanticAI") PydanticAI
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+  * [ Introduction  ](..)
+  * [ Installation  ](../install/)
+  * Getting Help  [ Getting Help  ](./) Table of contents 
+    * Slack 
+    * GitHub Issues 
+  * [ Contributing  ](../contributing/)
+  * [ Troubleshooting  ](../troubleshooting/)
+  * Documentation  Documentation 
+    * [ Agents  ](../agents/)
+    * [ Models  ](../models/)
+    * [ Dependencies  ](../dependencies/)
+    * [ Function Tools  ](../tools/)
+    * [ Common Tools  ](../common-tools/)
+    * [ Results  ](../results/)
+    * [ Messages and chat history  ](../message-history/)
+    * [ Unit testing  ](../testing/)
+    * [ Debugging and Monitoring  ](../logfire/)
+    * [ Multi-agent Applications  ](../multi-agent-applications/)
+    * [ Graphs  ](../graph/)
+    * [ Evals  ](../evals/)
+    * [ Image, Audio & Document Input  ](../input/)
+    * [ MCP  ](../mcp/)
+
+MCP
+
+      * [ Client  ](../mcp/client/)
+      * [ Server  ](../mcp/server/)
+      * [ MCP Run Python  ](../mcp/run-python/)
+    * [ Command Line Interface (CLI)  ](../cli/)
+  * [ Examples  ](../examples/)
+
+Examples
+
+    * [ Pydantic Model  ](../examples/pydantic-model/)
+    * [ Weather agent  ](../examples/weather-agent/)
+    * [ Bank support  ](../examples/bank-support/)
+    * [ SQL Generation  ](../examples/sql-gen/)
+    * [ Flight booking  ](../examples/flight-booking/)
+    * [ RAG  ](../examples/rag/)
+    * [ Stream markdown  ](../examples/stream-markdown/)
+    * [ Stream whales  ](../examples/stream-whales/)
+    * [ Chat App with FastAPI  ](../examples/chat-app/)
+    * [ Question Graph  ](../examples/question-graph/)
+  * API Reference  API Reference 
+    * [ pydantic_ai.agent  ](../api/agent/)
+    * [ pydantic_ai.tools  ](../api/tools/)
+    * [ pydantic_ai.common_tools  ](../api/common_tools/)
+    * [ pydantic_ai.result  ](../api/result/)
+    * [ pydantic_ai.messages  ](../api/messages/)
+    * [ pydantic_ai.exceptions  ](../api/exceptions/)
+    * [ pydantic_ai.settings  ](../api/settings/)
+    * [ pydantic_ai.usage  ](../api/usage/)
+    * [ pydantic_ai.mcp  ](../api/mcp/)
+    * [ pydantic_ai.format_as_xml  ](../api/format_as_xml/)
+    * [ pydantic_ai.models  ](../api/models/base/)
+    * [ pydantic_ai.models.openai  ](../api/models/openai/)
+    * [ pydantic_ai.models.anthropic  ](../api/models/anthropic/)
+    * [ pydantic_ai.models.bedrock  ](../api/models/bedrock/)
+    * [ pydantic_ai.models.cohere  ](../api/models/cohere/)
+    * [ pydantic_ai.models.gemini  ](../api/models/gemini/)
+    * [ pydantic_ai.models.groq  ](../api/models/groq/)
+    * [ pydantic_ai.models.instrumented  ](../api/models/instrumented/)
+    * [ pydantic_ai.models.mistral  ](../api/models/mistral/)
+    * [ pydantic_ai.models.test  ](../api/models/test/)
+    * [ pydantic_ai.models.function  ](../api/models/function/)
+    * [ pydantic_ai.models.fallback  ](../api/models/fallback/)
+    * [ pydantic_ai.models.wrapper  ](../api/models/wrapper/)
+    * [ pydantic_ai.providers  ](../api/providers/)
+    * [ pydantic_graph  ](../api/pydantic_graph/graph/)
+    * [ pydantic_graph.nodes  ](../api/pydantic_graph/nodes/)
+    * [ pydantic_graph.persistence  ](../api/pydantic_graph/persistence/)
+    * [ pydantic_graph.mermaid  ](../api/pydantic_graph/mermaid/)
+    * [ pydantic_graph.exceptions  ](../api/pydantic_graph/exceptions/)
+    * [ pydantic_evals.dataset  ](../api/pydantic_evals/dataset/)
+    * [ pydantic_evals.evaluators  ](../api/pydantic_evals/evaluators/)
+    * [ pydantic_evals.reporting  ](../api/pydantic_evals/reporting/)
+    * [ pydantic_evals.otel  ](../api/pydantic_evals/otel/)
+    * [ pydantic_evals.generation  ](../api/pydantic_evals/generation/)
+
+Table of contents
+
+  * Slack 
+  * GitHub Issues 
+
+# Getting Help
+
+If you need help getting started with PydanticAI or with advanced usage, the
+following sources may be useful.
+
+##  Slack
+
+Join the `#pydantic-ai` channel in the [Pydantic
+Slack](https://logfire.pydantic.dev/docs/join-slack/) to ask questions, get
+help, and chat about PydanticAI. There's also channels for Pydantic, Logfire,
+and FastUI.
+
+If you're on a [Logfire](https://pydantic.dev/logfire) Pro plan, you can also
+get a dedicated private slack collab channel with us.
+
+##  GitHub Issues
+
+The [PydanticAI GitHub Issues](https://github.com/pydantic/pydantic-ai/issues)
+are a great place to ask questions and give us feedback.
+
+© Pydantic Services Inc. 2024 to present
+

@@ -1,0 +1,230 @@
+Skip to content
+
+[ ![logo](../../img/logo-white.svg) ](../.. "PydanticAI")
+
+PydanticAI
+
+pydantic_ai.common_tools
+
+Type to start searching
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+[ ![logo](../../img/logo-white.svg) ](../.. "PydanticAI") PydanticAI
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+  * [ Introduction  ](../..)
+  * [ Installation  ](../../install/)
+  * [ Getting Help  ](../../help/)
+  * [ Contributing  ](../../contributing/)
+  * [ Troubleshooting  ](../../troubleshooting/)
+  * Documentation  Documentation 
+    * [ Agents  ](../../agents/)
+    * [ Models  ](../../models/)
+    * [ Dependencies  ](../../dependencies/)
+    * [ Function Tools  ](../../tools/)
+    * [ Common Tools  ](../../common-tools/)
+    * [ Results  ](../../results/)
+    * [ Messages and chat history  ](../../message-history/)
+    * [ Unit testing  ](../../testing/)
+    * [ Debugging and Monitoring  ](../../logfire/)
+    * [ Multi-agent Applications  ](../../multi-agent-applications/)
+    * [ Graphs  ](../../graph/)
+    * [ Evals  ](../../evals/)
+    * [ Image, Audio & Document Input  ](../../input/)
+    * [ MCP  ](../../mcp/)
+
+MCP
+
+      * [ Client  ](../../mcp/client/)
+      * [ Server  ](../../mcp/server/)
+      * [ MCP Run Python  ](../../mcp/run-python/)
+    * [ Command Line Interface (CLI)  ](../../cli/)
+  * [ Examples  ](../../examples/)
+
+Examples
+
+    * [ Pydantic Model  ](../../examples/pydantic-model/)
+    * [ Weather agent  ](../../examples/weather-agent/)
+    * [ Bank support  ](../../examples/bank-support/)
+    * [ SQL Generation  ](../../examples/sql-gen/)
+    * [ Flight booking  ](../../examples/flight-booking/)
+    * [ RAG  ](../../examples/rag/)
+    * [ Stream markdown  ](../../examples/stream-markdown/)
+    * [ Stream whales  ](../../examples/stream-whales/)
+    * [ Chat App with FastAPI  ](../../examples/chat-app/)
+    * [ Question Graph  ](../../examples/question-graph/)
+  * API Reference  API Reference 
+    * [ pydantic_ai.agent  ](../agent/)
+    * [ pydantic_ai.tools  ](../tools/)
+    * pydantic_ai.common_tools  [ pydantic_ai.common_tools  ](./) Table of contents 
+      * duckduckgo 
+      * duckduckgo_search_tool 
+      * tavily 
+      * tavily_search_tool 
+    * [ pydantic_ai.result  ](../result/)
+    * [ pydantic_ai.messages  ](../messages/)
+    * [ pydantic_ai.exceptions  ](../exceptions/)
+    * [ pydantic_ai.settings  ](../settings/)
+    * [ pydantic_ai.usage  ](../usage/)
+    * [ pydantic_ai.mcp  ](../mcp/)
+    * [ pydantic_ai.format_as_xml  ](../format_as_xml/)
+    * [ pydantic_ai.models  ](../models/base/)
+    * [ pydantic_ai.models.openai  ](../models/openai/)
+    * [ pydantic_ai.models.anthropic  ](../models/anthropic/)
+    * [ pydantic_ai.models.bedrock  ](../models/bedrock/)
+    * [ pydantic_ai.models.cohere  ](../models/cohere/)
+    * [ pydantic_ai.models.gemini  ](../models/gemini/)
+    * [ pydantic_ai.models.groq  ](../models/groq/)
+    * [ pydantic_ai.models.instrumented  ](../models/instrumented/)
+    * [ pydantic_ai.models.mistral  ](../models/mistral/)
+    * [ pydantic_ai.models.test  ](../models/test/)
+    * [ pydantic_ai.models.function  ](../models/function/)
+    * [ pydantic_ai.models.fallback  ](../models/fallback/)
+    * [ pydantic_ai.models.wrapper  ](../models/wrapper/)
+    * [ pydantic_ai.providers  ](../providers/)
+    * [ pydantic_graph  ](../pydantic_graph/graph/)
+    * [ pydantic_graph.nodes  ](../pydantic_graph/nodes/)
+    * [ pydantic_graph.persistence  ](../pydantic_graph/persistence/)
+    * [ pydantic_graph.mermaid  ](../pydantic_graph/mermaid/)
+    * [ pydantic_graph.exceptions  ](../pydantic_graph/exceptions/)
+    * [ pydantic_evals.dataset  ](../pydantic_evals/dataset/)
+    * [ pydantic_evals.evaluators  ](../pydantic_evals/evaluators/)
+    * [ pydantic_evals.reporting  ](../pydantic_evals/reporting/)
+    * [ pydantic_evals.otel  ](../pydantic_evals/otel/)
+    * [ pydantic_evals.generation  ](../pydantic_evals/generation/)
+
+Table of contents
+
+  * duckduckgo 
+  * duckduckgo_search_tool 
+  * tavily 
+  * tavily_search_tool 
+
+# `pydantic_ai.common_tools`
+
+###  duckduckgo_search_tool
+
+    
+    
+    duckduckgo_search_tool(
+        duckduckgo_client: DDGS | None = None,
+        max_results: [int](https://docs.python.org/3/library/functions.html#int) | None = None,
+    )
+    
+
+Creates a DuckDuckGo search tool.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`duckduckgo_client` |  `DDGS | None` |  The DuckDuckGo search client. |  `None`  
+`max_results` |  `[int](https://docs.python.org/3/library/functions.html#int) | None` |  The maximum number of results. If None, returns results only from the first response. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/common_tools/duckduckgo.py`
+
+    
+    
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+
+|
+
+    
+    
+    def duckduckgo_search_tool(duckduckgo_client: DDGS | None = None, max_results: int | None = None):
+        """Creates a DuckDuckGo search tool.
+    
+        Args:
+            duckduckgo_client: The DuckDuckGo search client.
+            max_results: The maximum number of results. If None, returns results only from the first response.
+        """
+        return Tool(
+            DuckDuckGoSearchTool(client=duckduckgo_client or DDGS(), max_results=max_results).__call__,
+            name='duckduckgo_search',
+            description='Searches DuckDuckGo for the given query and returns the results.',
+        )
+      
+  
+---|---  
+  
+###  tavily_search_tool
+
+    
+    
+    tavily_search_tool(api_key: [str](https://docs.python.org/3/library/stdtypes.html#str))
+    
+
+Creates a Tavily search tool.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`api_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str)` |  The Tavily API key. You can get one by signing up at <https://app.tavily.com/home>. |  _required_  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/common_tools/tavily.py`
+
+    
+    
+    71
+    72
+    73
+    74
+    75
+    76
+    77
+    78
+    79
+    80
+    81
+    82
+    83
+
+|
+
+    
+    
+    def tavily_search_tool(api_key: str):
+        """Creates a Tavily search tool.
+    
+        Args:
+            api_key: The Tavily API key.
+    
+                You can get one by signing up at [https://app.tavily.com/home](https://app.tavily.com/home).
+        """
+        return Tool(
+            TavilySearchTool(client=AsyncTavilyClient(api_key)).__call__,
+            name='tavily_search',
+            description='Searches Tavily for the given query and returns the results.',
+        )
+      
+  
+---|---  
+  
+© Pydantic Services Inc. 2024 to present
+

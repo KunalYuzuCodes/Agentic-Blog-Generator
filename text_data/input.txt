@@ -1,0 +1,246 @@
+Skip to content
+
+[ ![logo](../img/logo-white.svg) ](.. "PydanticAI")
+
+PydanticAI
+
+Image, Audio & Document Input
+
+Type to start searching
+
+[ pydantic/pydantic-ai  ](https://github.com/pydantic/pydantic-ai "Go to
+repository")
+
+[ ![logo](../img/logo-white.svg) ](.. "PydanticAI") PydanticAI
+
+[ pydantic/pydantic-ai  ](https://github.com/pydantic/pydantic-ai "Go to
+repository")
+
+  * [ Introduction  ](..)
+  * [ Installation  ](../install/)
+  * [ Getting Help  ](../help/)
+  * [ Contributing  ](../contributing/)
+  * [ Troubleshooting  ](../troubleshooting/)
+  * Documentation  Documentation 
+    * [ Agents  ](../agents/)
+    * [ Models  ](../models/)
+    * [ Dependencies  ](../dependencies/)
+    * [ Function Tools  ](../tools/)
+    * [ Common Tools  ](../common-tools/)
+    * [ Results  ](../results/)
+    * [ Messages and chat history  ](../message-history/)
+    * [ Unit testing  ](../testing/)
+    * [ Debugging and Monitoring  ](../logfire/)
+    * [ Multi-agent Applications  ](../multi-agent-applications/)
+    * [ Graphs  ](../graph/)
+    * [ Evals  ](../evals/)
+    * Image, Audio & Document Input  [ Image, Audio & Document Input  ](./) Table of contents 
+      * Image Input 
+      * Audio Input 
+      * Document Input 
+    * [ MCP  ](../mcp/)
+
+MCP
+
+      * [ Client  ](../mcp/client/)
+      * [ Server  ](../mcp/server/)
+      * [ MCP Run Python  ](../mcp/run-python/)
+    * [ Command Line Interface (CLI)  ](../cli/)
+  * [ Examples  ](../examples/)
+
+Examples
+
+    * [ Pydantic Model  ](../examples/pydantic-model/)
+    * [ Weather agent  ](../examples/weather-agent/)
+    * [ Bank support  ](../examples/bank-support/)
+    * [ SQL Generation  ](../examples/sql-gen/)
+    * [ Flight booking  ](../examples/flight-booking/)
+    * [ RAG  ](../examples/rag/)
+    * [ Stream markdown  ](../examples/stream-markdown/)
+    * [ Stream whales  ](../examples/stream-whales/)
+    * [ Chat App with FastAPI  ](../examples/chat-app/)
+    * [ Question Graph  ](../examples/question-graph/)
+  * API Reference  API Reference 
+    * [ pydantic_ai.agent  ](../api/agent/)
+    * [ pydantic_ai.tools  ](../api/tools/)
+    * [ pydantic_ai.common_tools  ](../api/common_tools/)
+    * [ pydantic_ai.result  ](../api/result/)
+    * [ pydantic_ai.messages  ](../api/messages/)
+    * [ pydantic_ai.exceptions  ](../api/exceptions/)
+    * [ pydantic_ai.settings  ](../api/settings/)
+    * [ pydantic_ai.usage  ](../api/usage/)
+    * [ pydantic_ai.mcp  ](../api/mcp/)
+    * [ pydantic_ai.format_as_xml  ](../api/format_as_xml/)
+    * [ pydantic_ai.models  ](../api/models/base/)
+    * [ pydantic_ai.models.openai  ](../api/models/openai/)
+    * [ pydantic_ai.models.anthropic  ](../api/models/anthropic/)
+    * [ pydantic_ai.models.bedrock  ](../api/models/bedrock/)
+    * [ pydantic_ai.models.cohere  ](../api/models/cohere/)
+    * [ pydantic_ai.models.gemini  ](../api/models/gemini/)
+    * [ pydantic_ai.models.groq  ](../api/models/groq/)
+    * [ pydantic_ai.models.instrumented  ](../api/models/instrumented/)
+    * [ pydantic_ai.models.mistral  ](../api/models/mistral/)
+    * [ pydantic_ai.models.test  ](../api/models/test/)
+    * [ pydantic_ai.models.function  ](../api/models/function/)
+    * [ pydantic_ai.models.fallback  ](../api/models/fallback/)
+    * [ pydantic_ai.models.wrapper  ](../api/models/wrapper/)
+    * [ pydantic_ai.providers  ](../api/providers/)
+    * [ pydantic_graph  ](../api/pydantic_graph/graph/)
+    * [ pydantic_graph.nodes  ](../api/pydantic_graph/nodes/)
+    * [ pydantic_graph.persistence  ](../api/pydantic_graph/persistence/)
+    * [ pydantic_graph.mermaid  ](../api/pydantic_graph/mermaid/)
+    * [ pydantic_graph.exceptions  ](../api/pydantic_graph/exceptions/)
+    * [ pydantic_evals.dataset  ](../api/pydantic_evals/dataset/)
+    * [ pydantic_evals.evaluators  ](../api/pydantic_evals/evaluators/)
+    * [ pydantic_evals.reporting  ](../api/pydantic_evals/reporting/)
+    * [ pydantic_evals.otel  ](../api/pydantic_evals/otel/)
+    * [ pydantic_evals.generation  ](../api/pydantic_evals/generation/)
+
+Table of contents
+
+  * Image Input 
+  * Audio Input 
+  * Document Input 
+
+# Image, Audio & Document Input
+
+Some LLMs are now capable of understanding both audio, image and document
+content.
+
+## Image Input
+
+Info
+
+Some models do not support image input. Please check the model's documentation
+to confirm whether it supports image input.
+
+If you have a direct URL for the image, you can use
+[`ImageUrl`](../api/messages/#pydantic_ai.messages.ImageUrl):
+
+main.py
+
+    
+    
+    from pydantic_ai import Agent, ImageUrl
+    
+    agent = Agent(model='openai:gpt-4o')
+    result = agent.run_sync(
+        [
+            'What company is this logo from?',
+            ImageUrl(url='https://iili.io/3Hs4FMg.png'),
+        ]
+    )
+    print(result.data)
+    #> This is the logo for Pydantic, a data validation and settings management library in Python.
+    
+
+If you have the image locally, you can also use
+[`BinaryContent`](../api/messages/#pydantic_ai.messages.BinaryContent):
+
+main.py
+
+    
+    
+    import httpx
+    
+    from pydantic_ai import Agent, BinaryContent
+    
+    image_response = httpx.get('https://iili.io/3Hs4FMg.png')  # Pydantic logo
+    
+    agent = Agent(model='openai:gpt-4o')
+    result = agent.run_sync(
+        [
+            'What company is this logo from?',
+            BinaryContent(data=image_response.content, media_type='image/png'),  
+        ]
+    )
+    print(result.data)
+    #> This is the logo for Pydantic, a data validation and settings management library in Python.
+    
+
+  1. 
+
+## Audio Input
+
+Info
+
+Some models do not support audio input. Please check the model's documentation
+to confirm whether it supports audio input.
+
+You can provide audio input using either
+[`AudioUrl`](../api/messages/#pydantic_ai.messages.AudioUrl) or
+[`BinaryContent`](../api/messages/#pydantic_ai.messages.BinaryContent). The
+process is analogous to the examples above.
+
+## Document Input
+
+Info
+
+Some models do not support document input. Please check the model's
+documentation to confirm whether it supports document input.
+
+Warning
+
+When using Gemini models, the document content will always be sent as binary
+data, regardless of whether you use `DocumentUrl` or `BinaryContent`. This is
+due to differences in how Vertex AI and Google AI handle document inputs.
+
+For more details, see [this discussion](https://discuss.ai.google.dev/t/i-am-
+using-google-generative-ai-model-gemini-1-5-pro-for-image-analysis-but-
+getting-error/34866/4).
+
+If you are unsatisfied with this behavior, please let us know by opening an
+issue on [GitHub](https://github.com/pydantic/pydantic-ai/issues).
+
+You can provide document input using either
+[`DocumentUrl`](../api/messages/#pydantic_ai.messages.DocumentUrl) or
+[`BinaryContent`](../api/messages/#pydantic_ai.messages.BinaryContent). The
+process is similar to the examples above.
+
+If you have a direct URL for the document, you can use
+[`DocumentUrl`](../api/messages/#pydantic_ai.messages.DocumentUrl):
+
+main.py
+
+    
+    
+    from pydantic_ai import Agent, DocumentUrl
+    
+    agent = Agent(model='anthropic:claude-3-sonnet')
+    result = agent.run_sync(
+        [
+            'What is the main content of this document?',
+            DocumentUrl(url='https://storage.googleapis.com/cloud-samples-data/generative-ai/pdf/2403.05530.pdf'),
+        ]
+    )
+    print(result.data)
+    #> This document is the technical report introducing Gemini 1.5, Google's latest large language model...
+    
+
+The supported document formats vary by model.
+
+You can also use
+[`BinaryContent`](../api/messages/#pydantic_ai.messages.BinaryContent) to pass
+document data directly:
+
+main.py
+
+    
+    
+    from pathlib import Path
+    from pydantic_ai import Agent, BinaryContent
+    
+    pdf_path = Path('document.pdf')
+    agent = Agent(model='anthropic:claude-3-sonnet')
+    result = agent.run_sync(
+        [
+            'What is the main content of this document?',
+            BinaryContent(data=pdf_path.read_bytes(), media_type='application/pdf'),
+        ]
+    )
+    print(result.data)
+    #> The document discusses...
+    
+
+© Pydantic Services Inc. 2024 to present
+

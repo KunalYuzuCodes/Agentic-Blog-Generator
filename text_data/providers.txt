@@ -1,0 +1,2279 @@
+Skip to content
+
+[ ![logo](../../img/logo-white.svg) ](../.. "PydanticAI")
+
+PydanticAI
+
+pydantic_ai.providers
+
+Type to start searching
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+[ ![logo](../../img/logo-white.svg) ](../.. "PydanticAI") PydanticAI
+
+[ pydantic/pydantic-ai
+
+  * v0.0.50
+  * 8k
+  * 687
+
+](https://github.com/pydantic/pydantic-ai "Go to repository")
+
+  * [ Introduction  ](../..)
+  * [ Installation  ](../../install/)
+  * [ Getting Help  ](../../help/)
+  * [ Contributing  ](../../contributing/)
+  * [ Troubleshooting  ](../../troubleshooting/)
+  * Documentation  Documentation 
+    * [ Agents  ](../../agents/)
+    * [ Models  ](../../models/)
+    * [ Dependencies  ](../../dependencies/)
+    * [ Function Tools  ](../../tools/)
+    * [ Common Tools  ](../../common-tools/)
+    * [ Results  ](../../results/)
+    * [ Messages and chat history  ](../../message-history/)
+    * [ Unit testing  ](../../testing/)
+    * [ Debugging and Monitoring  ](../../logfire/)
+    * [ Multi-agent Applications  ](../../multi-agent-applications/)
+    * [ Graphs  ](../../graph/)
+    * [ Evals  ](../../evals/)
+    * [ Image, Audio & Document Input  ](../../input/)
+    * [ MCP  ](../../mcp/)
+
+MCP
+
+      * [ Client  ](../../mcp/client/)
+      * [ Server  ](../../mcp/server/)
+      * [ MCP Run Python  ](../../mcp/run-python/)
+    * [ Command Line Interface (CLI)  ](../../cli/)
+  * [ Examples  ](../../examples/)
+
+Examples
+
+    * [ Pydantic Model  ](../../examples/pydantic-model/)
+    * [ Weather agent  ](../../examples/weather-agent/)
+    * [ Bank support  ](../../examples/bank-support/)
+    * [ SQL Generation  ](../../examples/sql-gen/)
+    * [ Flight booking  ](../../examples/flight-booking/)
+    * [ RAG  ](../../examples/rag/)
+    * [ Stream markdown  ](../../examples/stream-markdown/)
+    * [ Stream whales  ](../../examples/stream-whales/)
+    * [ Chat App with FastAPI  ](../../examples/chat-app/)
+    * [ Question Graph  ](../../examples/question-graph/)
+  * API Reference  API Reference 
+    * [ pydantic_ai.agent  ](../agent/)
+    * [ pydantic_ai.tools  ](../tools/)
+    * [ pydantic_ai.common_tools  ](../common_tools/)
+    * [ pydantic_ai.result  ](../result/)
+    * [ pydantic_ai.messages  ](../messages/)
+    * [ pydantic_ai.exceptions  ](../exceptions/)
+    * [ pydantic_ai.settings  ](../settings/)
+    * [ pydantic_ai.usage  ](../usage/)
+    * [ pydantic_ai.mcp  ](../mcp/)
+    * [ pydantic_ai.format_as_xml  ](../format_as_xml/)
+    * [ pydantic_ai.models  ](../models/base/)
+    * [ pydantic_ai.models.openai  ](../models/openai/)
+    * [ pydantic_ai.models.anthropic  ](../models/anthropic/)
+    * [ pydantic_ai.models.bedrock  ](../models/bedrock/)
+    * [ pydantic_ai.models.cohere  ](../models/cohere/)
+    * [ pydantic_ai.models.gemini  ](../models/gemini/)
+    * [ pydantic_ai.models.groq  ](../models/groq/)
+    * [ pydantic_ai.models.instrumented  ](../models/instrumented/)
+    * [ pydantic_ai.models.mistral  ](../models/mistral/)
+    * [ pydantic_ai.models.test  ](../models/test/)
+    * [ pydantic_ai.models.function  ](../models/function/)
+    * [ pydantic_ai.models.fallback  ](../models/fallback/)
+    * [ pydantic_ai.models.wrapper  ](../models/wrapper/)
+    * pydantic_ai.providers  [ pydantic_ai.providers  ](./) Table of contents 
+      * Provider 
+      * name 
+      * base_url 
+      * client 
+      * google_vertex 
+      * GoogleVertexProvider 
+        * __init__ 
+      * openai 
+      * OpenAIProvider 
+        * __init__ 
+      * deepseek 
+      * DeepSeekProvider 
+      * bedrock 
+      * BedrockProvider 
+        * __init__ 
+      * groq 
+      * GroqProvider 
+        * __init__ 
+      * azure 
+      * AzureProvider 
+        * __init__ 
+      * cohere 
+      * CohereProvider 
+        * __init__ 
+      * mistral 
+      * MistralProvider 
+        * __init__ 
+    * [ pydantic_graph  ](../pydantic_graph/graph/)
+    * [ pydantic_graph.nodes  ](../pydantic_graph/nodes/)
+    * [ pydantic_graph.persistence  ](../pydantic_graph/persistence/)
+    * [ pydantic_graph.mermaid  ](../pydantic_graph/mermaid/)
+    * [ pydantic_graph.exceptions  ](../pydantic_graph/exceptions/)
+    * [ pydantic_evals.dataset  ](../pydantic_evals/dataset/)
+    * [ pydantic_evals.evaluators  ](../pydantic_evals/evaluators/)
+    * [ pydantic_evals.reporting  ](../pydantic_evals/reporting/)
+    * [ pydantic_evals.otel  ](../pydantic_evals/otel/)
+    * [ pydantic_evals.generation  ](../pydantic_evals/generation/)
+
+Table of contents
+
+  * Provider 
+  * name 
+  * base_url 
+  * client 
+  * google_vertex 
+  * GoogleVertexProvider 
+    * __init__ 
+  * openai 
+  * OpenAIProvider 
+    * __init__ 
+  * deepseek 
+  * DeepSeekProvider 
+  * bedrock 
+  * BedrockProvider 
+    * __init__ 
+  * groq 
+  * GroqProvider 
+    * __init__ 
+  * azure 
+  * AzureProvider 
+    * __init__ 
+  * cohere 
+  * CohereProvider 
+    * __init__ 
+  * mistral 
+  * MistralProvider 
+    * __init__ 
+
+# `pydantic_ai.providers`
+
+Bases: `[ABC](https://docs.python.org/3/library/abc.html#abc.ABC "abc.ABC")`,
+`[Generic](https://docs.python.org/3/library/typing.html#typing.Generic
+"typing.Generic")[InterfaceClient]`
+
+Abstract class for a provider.
+
+The provider is in charge of providing an authenticated client to the API.
+
+Each provider only supports a specific interface. A interface can be supported
+by multiple providers.
+
+For example, the OpenAIModel interface can be supported by the OpenAIProvider
+and the DeepSeekProvider.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/__init__.py`
+
+    
+    
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+
+|
+
+    
+    
+    class Provider(ABC, Generic[InterfaceClient]):
+        """Abstract class for a provider.
+    
+        The provider is in charge of providing an authenticated client to the API.
+    
+        Each provider only supports a specific interface. A interface can be supported by multiple providers.
+    
+        For example, the OpenAIModel interface can be supported by the OpenAIProvider and the DeepSeekProvider.
+        """
+    
+        _client: InterfaceClient
+    
+        @property
+        @abstractmethod
+        def name(self) -> str:
+            """The provider name."""
+            raise NotImplementedError()
+    
+        @property
+        @abstractmethod
+        def base_url(self) -> str:
+            """The base URL for the provider API."""
+            raise NotImplementedError()
+    
+        @property
+        @abstractmethod
+        def client(self) -> InterfaceClient:
+            """The client for the provider."""
+            raise NotImplementedError()
+      
+  
+---|---  
+  
+###  name `abstractmethod` `property`
+
+    
+    
+    name: [str](https://docs.python.org/3/library/stdtypes.html#str)
+    
+
+The provider name.
+
+###  base_url `abstractmethod` `property`
+
+    
+    
+    base_url: [str](https://docs.python.org/3/library/stdtypes.html#str)
+    
+
+The base URL for the provider API.
+
+###  client `abstractmethod` `property`
+
+    
+    
+    client: InterfaceClient
+    
+
+The client for the provider.
+
+###  GoogleVertexProvider
+
+Bases: `Provider[AsyncClient]`
+
+Provider for Vertex AI API.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/google_vertex.py`
+
+    
+    
+     30
+     31
+     32
+     33
+     34
+     35
+     36
+     37
+     38
+     39
+     40
+     41
+     42
+     43
+     44
+     45
+     46
+     47
+     48
+     49
+     50
+     51
+     52
+     53
+     54
+     55
+     56
+     57
+     58
+     59
+     60
+     61
+     62
+     63
+     64
+     65
+     66
+     67
+     68
+     69
+     70
+     71
+     72
+     73
+     74
+     75
+     76
+     77
+     78
+     79
+     80
+     81
+     82
+     83
+     84
+     85
+     86
+     87
+     88
+     89
+     90
+     91
+     92
+     93
+     94
+     95
+     96
+     97
+     98
+     99
+    100
+    101
+    102
+    103
+    104
+    105
+    106
+    107
+    108
+
+|
+
+    
+    
+    class GoogleVertexProvider(Provider[httpx.AsyncClient]):
+        """Provider for Vertex AI API."""
+    
+        @property
+        def name(self) -> str:
+            return 'google-vertex'
+    
+        @property
+        def base_url(self) -> str:
+            return (
+                f'https://{self.region}-aiplatform.googleapis.com/v1'
+                f'/projects/{self.project_id}'
+                f'/locations/{self.region}'
+                f'/publishers/{self.model_publisher}/models/'
+            )
+    
+        @property
+        def client(self) -> httpx.AsyncClient:
+            return self._client
+    
+        @overload
+        def __init__(
+            self,
+            *,
+            service_account_file: Path | str | None = None,
+            project_id: str | None = None,
+            region: VertexAiRegion = 'us-central1',
+            model_publisher: str = 'google',
+            http_client: httpx.AsyncClient | None = None,
+        ) -> None: ...
+    
+        @overload
+        def __init__(
+            self,
+            *,
+            service_account_info: Mapping[str, str] | None = None,
+            project_id: str | None = None,
+            region: VertexAiRegion = 'us-central1',
+            model_publisher: str = 'google',
+            http_client: httpx.AsyncClient | None = None,
+        ) -> None: ...
+    
+        def __init__(
+            self,
+            *,
+            service_account_file: Path | str | None = None,
+            service_account_info: Mapping[str, str] | None = None,
+            project_id: str | None = None,
+            region: VertexAiRegion = 'us-central1',
+            model_publisher: str = 'google',
+            http_client: httpx.AsyncClient | None = None,
+        ) -> None:
+            """Create a new Vertex AI provider.
+    
+            Args:
+                service_account_file: Path to a service account file.
+                    If not provided, the service_account_info or default environment credentials will be used.
+                service_account_info: The loaded service_account_file contents.
+                    If not provided, the service_account_file or default environment credentials will be used.
+                project_id: The project ID to use, if not provided it will be taken from the credentials.
+                region: The region to make requests to.
+                model_publisher: The model publisher to use, I couldn't find a good list of available publishers,
+                    and from trial and error it seems non-google models don't work with the `generateContent` and
+                    `streamGenerateContent` functions, hence only `google` is currently supported.
+                    Please create an issue or PR if you know how to use other publishers.
+                http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+            """
+            if service_account_file and service_account_info:
+                raise ValueError('Only one of `service_account_file` or `service_account_info` can be provided.')
+    
+            self._client = http_client or cached_async_http_client(provider='google-vertex')
+            self.service_account_file = service_account_file
+            self.service_account_info = service_account_info
+            self.project_id = project_id
+            self.region = region
+            self.model_publisher = model_publisher
+    
+            self._client.auth = _VertexAIAuth(service_account_file, service_account_info, project_id, region)
+            self._client.base_url = self.base_url
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(
+        *,
+        service_account_file: [Path](https://docs.python.org/3/library/pathlib.html#pathlib.Path "pathlib.Path") | [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        project_id: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        region: VertexAiRegion = "us-central1",
+        model_publisher: [str](https://docs.python.org/3/library/stdtypes.html#str) = "google",
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+    
+    
+    __init__(
+        *,
+        service_account_info: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "collections.abc.Mapping")[[str](https://docs.python.org/3/library/stdtypes.html#str), [str](https://docs.python.org/3/library/stdtypes.html#str)] | None = None,
+        project_id: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        region: VertexAiRegion = "us-central1",
+        model_publisher: [str](https://docs.python.org/3/library/stdtypes.html#str) = "google",
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+    
+    
+    __init__(
+        *,
+        service_account_file: [Path](https://docs.python.org/3/library/pathlib.html#pathlib.Path "pathlib.Path") | [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        service_account_info: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "collections.abc.Mapping")[[str](https://docs.python.org/3/library/stdtypes.html#str), [str](https://docs.python.org/3/library/stdtypes.html#str)] | None = None,
+        project_id: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        region: VertexAiRegion = "us-central1",
+        model_publisher: [str](https://docs.python.org/3/library/stdtypes.html#str) = "google",
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+
+Create a new Vertex AI provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`service_account_file` |  `[Path](https://docs.python.org/3/library/pathlib.html#pathlib.Path "pathlib.Path") | [str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  Path to a service account file. If not provided, the service_account_info or default environment credentials will be used. |  `None`  
+`service_account_info` |  `[Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "collections.abc.Mapping")[[str](https://docs.python.org/3/library/stdtypes.html#str), [str](https://docs.python.org/3/library/stdtypes.html#str)] | None` |  The loaded service_account_file contents. If not provided, the service_account_file or default environment credentials will be used. |  `None`  
+`project_id` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The project ID to use, if not provided it will be taken from the credentials. |  `None`  
+`region` |  `VertexAiRegion` |  The region to make requests to. |  `'us-central1'`  
+`model_publisher` |  `[str](https://docs.python.org/3/library/stdtypes.html#str)` |  The model publisher to use, I couldn't find a good list of available publishers, and from trial and error it seems non-google models don't work with the `generateContent` and `streamGenerateContent` functions, hence only `google` is currently supported. Please create an issue or PR if you know how to use other publishers. |  `'google'`  
+`http_client` |  `AsyncClient | None` |  An existing `httpx.AsyncClient` to use for making HTTP requests. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/google_vertex.py`
+
+    
+    
+     72
+     73
+     74
+     75
+     76
+     77
+     78
+     79
+     80
+     81
+     82
+     83
+     84
+     85
+     86
+     87
+     88
+     89
+     90
+     91
+     92
+     93
+     94
+     95
+     96
+     97
+     98
+     99
+    100
+    101
+    102
+    103
+    104
+    105
+    106
+    107
+    108
+
+|
+
+    
+    
+    def __init__(
+        self,
+        *,
+        service_account_file: Path | str | None = None,
+        service_account_info: Mapping[str, str] | None = None,
+        project_id: str | None = None,
+        region: VertexAiRegion = 'us-central1',
+        model_publisher: str = 'google',
+        http_client: httpx.AsyncClient | None = None,
+    ) -> None:
+        """Create a new Vertex AI provider.
+    
+        Args:
+            service_account_file: Path to a service account file.
+                If not provided, the service_account_info or default environment credentials will be used.
+            service_account_info: The loaded service_account_file contents.
+                If not provided, the service_account_file or default environment credentials will be used.
+            project_id: The project ID to use, if not provided it will be taken from the credentials.
+            region: The region to make requests to.
+            model_publisher: The model publisher to use, I couldn't find a good list of available publishers,
+                and from trial and error it seems non-google models don't work with the `generateContent` and
+                `streamGenerateContent` functions, hence only `google` is currently supported.
+                Please create an issue or PR if you know how to use other publishers.
+            http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+        """
+        if service_account_file and service_account_info:
+            raise ValueError('Only one of `service_account_file` or `service_account_info` can be provided.')
+    
+        self._client = http_client or cached_async_http_client(provider='google-vertex')
+        self.service_account_file = service_account_file
+        self.service_account_info = service_account_info
+        self.project_id = project_id
+        self.region = region
+        self.model_publisher = model_publisher
+    
+        self._client.auth = _VertexAIAuth(service_account_file, service_account_info, project_id, region)
+        self._client.base_url = self.base_url
+      
+  
+---|---  
+  
+###  OpenAIProvider
+
+Bases: `Provider[AsyncOpenAI]`
+
+Provider for OpenAI API.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/openai.py`
+
+    
+    
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+
+|
+
+    
+    
+    class OpenAIProvider(Provider[AsyncOpenAI]):
+        """Provider for OpenAI API."""
+    
+        @property
+        def name(self) -> str:
+            return 'openai'  # pragma: no cover
+    
+        @property
+        def base_url(self) -> str:
+            return str(self.client.base_url)
+    
+        @property
+        def client(self) -> AsyncOpenAI:
+            return self._client
+    
+        def __init__(
+            self,
+            base_url: str | None = None,
+            api_key: str | None = None,
+            openai_client: AsyncOpenAI | None = None,
+            http_client: httpx.AsyncClient | None = None,
+        ) -> None:
+            """Create a new OpenAI provider.
+    
+            Args:
+                base_url: The base url for the OpenAI requests. If not provided, the `OPENAI_BASE_URL` environment variable
+                    will be used if available. Otherwise, defaults to OpenAI's base url.
+                api_key: The API key to use for authentication, if not provided, the `OPENAI_API_KEY` environment variable
+                    will be used if available.
+                openai_client: An existing
+                    [`AsyncOpenAI`](https://github.com/openai/openai-python?tab=readme-ov-file#async-usage)
+                    client to use. If provided, `base_url`, `api_key`, and `http_client` must be `None`.
+                http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+            """
+            # This is a workaround for the OpenAI client requiring an API key, whilst locally served,
+            # openai compatible models do not always need an API key, but a placeholder (non-empty) key is required.
+            if api_key is None and 'OPENAI_API_KEY' not in os.environ and base_url is not None and openai_client is None:
+                api_key = 'api-key-not-set'
+    
+            if openai_client is not None:
+                assert base_url is None, 'Cannot provide both `openai_client` and `base_url`'
+                assert http_client is None, 'Cannot provide both `openai_client` and `http_client`'
+                assert api_key is None, 'Cannot provide both `openai_client` and `api_key`'
+                self._client = openai_client
+            elif http_client is not None:
+                self._client = AsyncOpenAI(base_url=base_url, api_key=api_key, http_client=http_client)
+            else:
+                http_client = cached_async_http_client(provider='openai')
+                self._client = AsyncOpenAI(base_url=base_url, api_key=api_key, http_client=http_client)
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(
+        base_url: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        openai_client: AsyncOpenAI | None = None,
+        http_client: AsyncClient | None = None,
+    ) -> None
+    
+
+Create a new OpenAI provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`base_url` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The base url for the OpenAI requests. If not provided, the `OPENAI_BASE_URL` environment variable will be used if available. Otherwise, defaults to OpenAI's base url. |  `None`  
+`api_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The API key to use for authentication, if not provided, the `OPENAI_API_KEY` environment variable will be used if available. |  `None`  
+`openai_client` |  `AsyncOpenAI | None` |  An existing [`AsyncOpenAI`](https://github.com/openai/openai-python?tab=readme-ov-file#async-usage) client to use. If provided, `base_url`, `api_key`, and `http_client` must be `None`. |  `None`  
+`http_client` |  `AsyncClient | None` |  An existing `httpx.AsyncClient` to use for making HTTP requests. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/openai.py`
+
+    
+    
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+
+|
+
+    
+    
+    def __init__(
+        self,
+        base_url: str | None = None,
+        api_key: str | None = None,
+        openai_client: AsyncOpenAI | None = None,
+        http_client: httpx.AsyncClient | None = None,
+    ) -> None:
+        """Create a new OpenAI provider.
+    
+        Args:
+            base_url: The base url for the OpenAI requests. If not provided, the `OPENAI_BASE_URL` environment variable
+                will be used if available. Otherwise, defaults to OpenAI's base url.
+            api_key: The API key to use for authentication, if not provided, the `OPENAI_API_KEY` environment variable
+                will be used if available.
+            openai_client: An existing
+                [`AsyncOpenAI`](https://github.com/openai/openai-python?tab=readme-ov-file#async-usage)
+                client to use. If provided, `base_url`, `api_key`, and `http_client` must be `None`.
+            http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+        """
+        # This is a workaround for the OpenAI client requiring an API key, whilst locally served,
+        # openai compatible models do not always need an API key, but a placeholder (non-empty) key is required.
+        if api_key is None and 'OPENAI_API_KEY' not in os.environ and base_url is not None and openai_client is None:
+            api_key = 'api-key-not-set'
+    
+        if openai_client is not None:
+            assert base_url is None, 'Cannot provide both `openai_client` and `base_url`'
+            assert http_client is None, 'Cannot provide both `openai_client` and `http_client`'
+            assert api_key is None, 'Cannot provide both `openai_client` and `api_key`'
+            self._client = openai_client
+        elif http_client is not None:
+            self._client = AsyncOpenAI(base_url=base_url, api_key=api_key, http_client=http_client)
+        else:
+            http_client = cached_async_http_client(provider='openai')
+            self._client = AsyncOpenAI(base_url=base_url, api_key=api_key, http_client=http_client)
+      
+  
+---|---  
+  
+###  DeepSeekProvider
+
+Bases: `Provider[AsyncOpenAI]`
+
+Provider for DeepSeek API.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/deepseek.py`
+
+    
+    
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+
+|
+
+    
+    
+    class DeepSeekProvider(Provider[AsyncOpenAI]):
+        """Provider for DeepSeek API."""
+    
+        @property
+        def name(self) -> str:
+            return 'deepseek'
+    
+        @property
+        def base_url(self) -> str:
+            return 'https://api.deepseek.com'
+    
+        @property
+        def client(self) -> AsyncOpenAI:
+            return self._client
+    
+        @overload
+        def __init__(self) -> None: ...
+    
+        @overload
+        def __init__(self, *, api_key: str) -> None: ...
+    
+        @overload
+        def __init__(self, *, api_key: str, http_client: AsyncHTTPClient) -> None: ...
+    
+        @overload
+        def __init__(self, *, openai_client: AsyncOpenAI | None = None) -> None: ...
+    
+        def __init__(
+            self,
+            *,
+            api_key: str | None = None,
+            openai_client: AsyncOpenAI | None = None,
+            http_client: AsyncHTTPClient | None = None,
+        ) -> None:
+            api_key = api_key or os.getenv('DEEPSEEK_API_KEY')
+            if not api_key and openai_client is None:
+                raise UserError(
+                    'Set the `DEEPSEEK_API_KEY` environment variable or pass it via `DeepSeekProvider(api_key=...)`'
+                    'to use the DeepSeek provider.'
+                )
+    
+            if openai_client is not None:
+                self._client = openai_client
+            elif http_client is not None:
+                self._client = AsyncOpenAI(base_url=self.base_url, api_key=api_key, http_client=http_client)
+            else:
+                http_client = cached_async_http_client(provider='deepseek')
+                self._client = AsyncOpenAI(base_url=self.base_url, api_key=api_key, http_client=http_client)
+      
+  
+---|---  
+  
+###  BedrockProvider
+
+Bases: `Provider[BaseClient]`
+
+Provider for AWS Bedrock.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/bedrock.py`
+
+    
+    
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+    76
+    77
+    78
+    79
+    80
+    81
+    82
+    83
+    84
+    85
+    86
+    87
+    88
+
+|
+
+    
+    
+    class BedrockProvider(Provider[BaseClient]):
+        """Provider for AWS Bedrock."""
+    
+        @property
+        def name(self) -> str:
+            return 'bedrock'
+    
+        @property
+        def base_url(self) -> str:
+            return self._client.meta.endpoint_url
+    
+        @property
+        def client(self) -> BaseClient:
+            return self._client
+    
+        @overload
+        def __init__(self, *, bedrock_client: BaseClient) -> None: ...
+    
+        @overload
+        def __init__(
+            self,
+            *,
+            region_name: str | None = None,
+            aws_access_key_id: str | None = None,
+            aws_secret_access_key: str | None = None,
+            aws_session_token: str | None = None,
+            aws_read_timeout: float | None = None,
+            aws_connect_timeout: float | None = None,
+        ) -> None: ...
+    
+        def __init__(
+            self,
+            *,
+            bedrock_client: BaseClient | None = None,
+            region_name: str | None = None,
+            aws_access_key_id: str | None = None,
+            aws_secret_access_key: str | None = None,
+            aws_session_token: str | None = None,
+            aws_read_timeout: float | None = None,
+            aws_connect_timeout: float | None = None,
+        ) -> None:
+            """Initialize the Bedrock provider.
+    
+            Args:
+                bedrock_client: A boto3 client for Bedrock Runtime. If provided, other arguments are ignored.
+                region_name: The AWS region name.
+                aws_access_key_id: The AWS access key ID.
+                aws_secret_access_key: The AWS secret access key.
+                aws_session_token: The AWS session token.
+                aws_read_timeout: The read timeout for Bedrock client.
+                aws_connect_timeout: The connect timeout for Bedrock client.
+            """
+            if bedrock_client is not None:
+                self._client = bedrock_client
+            else:
+                try:
+                    read_timeout = aws_read_timeout or float(os.getenv('AWS_READ_TIMEOUT', 300))
+                    connect_timeout = aws_connect_timeout or float(os.getenv('AWS_CONNECT_TIMEOUT', 60))
+                    self._client = boto3.client(  # type: ignore[reportUnknownMemberType]
+                        'bedrock-runtime',
+                        aws_access_key_id=aws_access_key_id,
+                        aws_secret_access_key=aws_secret_access_key,
+                        aws_session_token=aws_session_token,
+                        region_name=region_name,
+                        config=Config(read_timeout=read_timeout, connect_timeout=connect_timeout),
+                    )
+                except NoRegionError as exc:  # pragma: no cover
+                    raise UserError('You must provide a `region_name` or a boto3 client for Bedrock Runtime.') from exc
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(*, bedrock_client: BaseClient) -> None
+    
+    
+    
+    __init__(
+        *,
+        region_name: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_access_key_id: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_secret_access_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_session_token: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_read_timeout: [float](https://docs.python.org/3/library/functions.html#float) | None = None,
+        aws_connect_timeout: [float](https://docs.python.org/3/library/functions.html#float) | None = None
+    ) -> None
+    
+    
+    
+    __init__(
+        *,
+        bedrock_client: BaseClient | None = None,
+        region_name: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_access_key_id: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_secret_access_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_session_token: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        aws_read_timeout: [float](https://docs.python.org/3/library/functions.html#float) | None = None,
+        aws_connect_timeout: [float](https://docs.python.org/3/library/functions.html#float) | None = None
+    ) -> None
+    
+
+Initialize the Bedrock provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`bedrock_client` |  `BaseClient | None` |  A boto3 client for Bedrock Runtime. If provided, other arguments are ignored. |  `None`  
+`region_name` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The AWS region name. |  `None`  
+`aws_access_key_id` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The AWS access key ID. |  `None`  
+`aws_secret_access_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The AWS secret access key. |  `None`  
+`aws_session_token` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The AWS session token. |  `None`  
+`aws_read_timeout` |  `[float](https://docs.python.org/3/library/functions.html#float) | None` |  The read timeout for Bedrock client. |  `None`  
+`aws_connect_timeout` |  `[float](https://docs.python.org/3/library/functions.html#float) | None` |  The connect timeout for Bedrock client. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/bedrock.py`
+
+    
+    
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+    76
+    77
+    78
+    79
+    80
+    81
+    82
+    83
+    84
+    85
+    86
+    87
+    88
+
+|
+
+    
+    
+    def __init__(
+        self,
+        *,
+        bedrock_client: BaseClient | None = None,
+        region_name: str | None = None,
+        aws_access_key_id: str | None = None,
+        aws_secret_access_key: str | None = None,
+        aws_session_token: str | None = None,
+        aws_read_timeout: float | None = None,
+        aws_connect_timeout: float | None = None,
+    ) -> None:
+        """Initialize the Bedrock provider.
+    
+        Args:
+            bedrock_client: A boto3 client for Bedrock Runtime. If provided, other arguments are ignored.
+            region_name: The AWS region name.
+            aws_access_key_id: The AWS access key ID.
+            aws_secret_access_key: The AWS secret access key.
+            aws_session_token: The AWS session token.
+            aws_read_timeout: The read timeout for Bedrock client.
+            aws_connect_timeout: The connect timeout for Bedrock client.
+        """
+        if bedrock_client is not None:
+            self._client = bedrock_client
+        else:
+            try:
+                read_timeout = aws_read_timeout or float(os.getenv('AWS_READ_TIMEOUT', 300))
+                connect_timeout = aws_connect_timeout or float(os.getenv('AWS_CONNECT_TIMEOUT', 60))
+                self._client = boto3.client(  # type: ignore[reportUnknownMemberType]
+                    'bedrock-runtime',
+                    aws_access_key_id=aws_access_key_id,
+                    aws_secret_access_key=aws_secret_access_key,
+                    aws_session_token=aws_session_token,
+                    region_name=region_name,
+                    config=Config(read_timeout=read_timeout, connect_timeout=connect_timeout),
+                )
+            except NoRegionError as exc:  # pragma: no cover
+                raise UserError('You must provide a `region_name` or a boto3 client for Bedrock Runtime.') from exc
+      
+  
+---|---  
+  
+###  GroqProvider
+
+Bases: `Provider[AsyncGroq]`
+
+Provider for Groq API.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/groq.py`
+
+    
+    
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+
+|
+
+    
+    
+    class GroqProvider(Provider[AsyncGroq]):
+        """Provider for Groq API."""
+    
+        @property
+        def name(self) -> str:
+            return 'groq'
+    
+        @property
+        def base_url(self) -> str:
+            return os.environ.get('GROQ_BASE_URL', 'https://api.groq.com')
+    
+        @property
+        def client(self) -> AsyncGroq:
+            return self._client
+    
+        @overload
+        def __init__(self, *, groq_client: AsyncGroq | None = None) -> None: ...
+    
+        @overload
+        def __init__(self, *, api_key: str | None = None, http_client: AsyncHTTPClient | None = None) -> None: ...
+    
+        def __init__(
+            self,
+            *,
+            api_key: str | None = None,
+            groq_client: AsyncGroq | None = None,
+            http_client: AsyncHTTPClient | None = None,
+        ) -> None:
+            """Create a new Groq provider.
+    
+            Args:
+                api_key: The API key to use for authentication, if not provided, the `GROQ_API_KEY` environment variable
+                    will be used if available.
+                groq_client: An existing
+                    [`AsyncGroq`](https://github.com/groq/groq-python?tab=readme-ov-file#async-usage)
+                    client to use. If provided, `api_key` and `http_client` must be `None`.
+                http_client: An existing `AsyncHTTPClient` to use for making HTTP requests.
+            """
+            if groq_client is not None:
+                assert http_client is None, 'Cannot provide both `groq_client` and `http_client`'
+                assert api_key is None, 'Cannot provide both `groq_client` and `api_key`'
+                self._client = groq_client
+            else:
+                api_key = api_key or os.environ.get('GROQ_API_KEY')
+    
+                if not api_key:
+                    raise UserError(
+                        'Set the `GROQ_API_KEY` environment variable or pass it via `GroqProvider(api_key=...)`'
+                        'to use the Groq provider.'
+                    )
+                elif http_client is not None:
+                    self._client = AsyncGroq(base_url=self.base_url, api_key=api_key, http_client=http_client)
+                else:
+                    http_client = cached_async_http_client(provider='groq')
+                    self._client = AsyncGroq(base_url=self.base_url, api_key=api_key, http_client=http_client)
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(*, groq_client: AsyncGroq | None = None) -> None
+    
+    
+    
+    __init__(
+        *,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+    
+    
+    __init__(
+        *,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        groq_client: AsyncGroq | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+
+Create a new Groq provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`api_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The API key to use for authentication, if not provided, the `GROQ_API_KEY` environment variable will be used if available. |  `None`  
+`groq_client` |  `AsyncGroq | None` |  An existing [`AsyncGroq`](https://github.com/groq/groq-python?tab=readme-ov-file#async-usage) client to use. If provided, `api_key` and `http_client` must be `None`. |  `None`  
+`http_client` |  `AsyncClient | None` |  An existing `AsyncHTTPClient` to use for making HTTP requests. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/groq.py`
+
+    
+    
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+
+|
+
+    
+    
+    def __init__(
+        self,
+        *,
+        api_key: str | None = None,
+        groq_client: AsyncGroq | None = None,
+        http_client: AsyncHTTPClient | None = None,
+    ) -> None:
+        """Create a new Groq provider.
+    
+        Args:
+            api_key: The API key to use for authentication, if not provided, the `GROQ_API_KEY` environment variable
+                will be used if available.
+            groq_client: An existing
+                [`AsyncGroq`](https://github.com/groq/groq-python?tab=readme-ov-file#async-usage)
+                client to use. If provided, `api_key` and `http_client` must be `None`.
+            http_client: An existing `AsyncHTTPClient` to use for making HTTP requests.
+        """
+        if groq_client is not None:
+            assert http_client is None, 'Cannot provide both `groq_client` and `http_client`'
+            assert api_key is None, 'Cannot provide both `groq_client` and `api_key`'
+            self._client = groq_client
+        else:
+            api_key = api_key or os.environ.get('GROQ_API_KEY')
+    
+            if not api_key:
+                raise UserError(
+                    'Set the `GROQ_API_KEY` environment variable or pass it via `GroqProvider(api_key=...)`'
+                    'to use the Groq provider.'
+                )
+            elif http_client is not None:
+                self._client = AsyncGroq(base_url=self.base_url, api_key=api_key, http_client=http_client)
+            else:
+                http_client = cached_async_http_client(provider='groq')
+                self._client = AsyncGroq(base_url=self.base_url, api_key=api_key, http_client=http_client)
+      
+  
+---|---  
+  
+###  AzureProvider
+
+Bases: `Provider[AsyncOpenAI]`
+
+Provider for Azure OpenAI API.
+
+See <https://azure.microsoft.com/en-us/products/ai-foundry> for more
+information.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/azure.py`
+
+    
+    
+     22
+     23
+     24
+     25
+     26
+     27
+     28
+     29
+     30
+     31
+     32
+     33
+     34
+     35
+     36
+     37
+     38
+     39
+     40
+     41
+     42
+     43
+     44
+     45
+     46
+     47
+     48
+     49
+     50
+     51
+     52
+     53
+     54
+     55
+     56
+     57
+     58
+     59
+     60
+     61
+     62
+     63
+     64
+     65
+     66
+     67
+     68
+     69
+     70
+     71
+     72
+     73
+     74
+     75
+     76
+     77
+     78
+     79
+     80
+     81
+     82
+     83
+     84
+     85
+     86
+     87
+     88
+     89
+     90
+     91
+     92
+     93
+     94
+     95
+     96
+     97
+     98
+     99
+    100
+    101
+    102
+    103
+    104
+    105
+    106
+    107
+
+|
+
+    
+    
+    class AzureProvider(Provider[AsyncOpenAI]):
+        """Provider for Azure OpenAI API.
+    
+        See <https://azure.microsoft.com/en-us/products/ai-foundry> for more information.
+        """
+    
+        @property
+        def name(self) -> str:
+            return 'azure'
+    
+        @property
+        def base_url(self) -> str:
+            assert self._base_url is not None
+            return self._base_url
+    
+        @property
+        def client(self) -> AsyncOpenAI:
+            return self._client
+    
+        @overload
+        def __init__(self, *, openai_client: AsyncAzureOpenAI) -> None: ...
+    
+        @overload
+        def __init__(
+            self,
+            *,
+            azure_endpoint: str | None = None,
+            api_version: str | None = None,
+            api_key: str | None = None,
+            http_client: httpx.AsyncClient | None = None,
+        ) -> None: ...
+    
+        def __init__(
+            self,
+            *,
+            azure_endpoint: str | None = None,
+            api_version: str | None = None,
+            api_key: str | None = None,
+            openai_client: AsyncAzureOpenAI | None = None,
+            http_client: httpx.AsyncClient | None = None,
+        ) -> None:
+            """Create a new Azure provider.
+    
+            Args:
+                azure_endpoint: The Azure endpoint to use for authentication, if not provided, the `AZURE_OPENAI_ENDPOINT`
+                    environment variable will be used if available.
+                api_version: The API version to use for authentication, if not provided, the `OPENAI_API_VERSION`
+                    environment variable will be used if available.
+                api_key: The API key to use for authentication, if not provided, the `AZURE_OPENAI_API_KEY` environment variable
+                    will be used if available.
+                openai_client: An existing
+                    [`AsyncAzureOpenAI`](https://github.com/openai/openai-python#microsoft-azure-openai)
+                    client to use. If provided, `base_url`, `api_key`, and `http_client` must be `None`.
+                http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+            """
+            if openai_client is not None:
+                assert azure_endpoint is None, 'Cannot provide both `openai_client` and `azure_endpoint`'
+                assert http_client is None, 'Cannot provide both `openai_client` and `http_client`'
+                assert api_key is None, 'Cannot provide both `openai_client` and `api_key`'
+                self._base_url = str(openai_client.base_url)
+                self._client = openai_client
+            else:
+                azure_endpoint = azure_endpoint or os.getenv('AZURE_OPENAI_ENDPOINT')
+                if not azure_endpoint:  # pragma: no cover
+                    raise UserError(
+                        'Must provide one of the `azure_endpoint` argument or the `AZURE_OPENAI_ENDPOINT` environment variable'
+                    )
+    
+                if not api_key and 'OPENAI_API_KEY' not in os.environ:  # pragma: no cover
+                    raise UserError(
+                        'Must provide one of the `api_key` argument or the `OPENAI_API_KEY` environment variable'
+                    )
+    
+                if not api_version and 'OPENAI_API_VERSION' not in os.environ:  # pragma: no cover
+                    raise UserError(
+                        'Must provide one of the `api_version` argument or the `OPENAI_API_VERSION` environment variable'
+                    )
+    
+                http_client = http_client or cached_async_http_client(provider='azure')
+                self._client = AsyncAzureOpenAI(
+                    azure_endpoint=azure_endpoint,
+                    api_key=api_key,
+                    api_version=api_version,
+                    http_client=http_client,
+                )
+                self._base_url = str(self._client.base_url)
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(*, openai_client: AsyncAzureOpenAI) -> None
+    
+    
+    
+    __init__(
+        *,
+        azure_endpoint: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        api_version: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+    
+    
+    __init__(
+        *,
+        azure_endpoint: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        api_version: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        openai_client: AsyncAzureOpenAI | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+
+Create a new Azure provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`azure_endpoint` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The Azure endpoint to use for authentication, if not provided, the `AZURE_OPENAI_ENDPOINT` environment variable will be used if available. |  `None`  
+`api_version` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The API version to use for authentication, if not provided, the `OPENAI_API_VERSION` environment variable will be used if available. |  `None`  
+`api_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The API key to use for authentication, if not provided, the `AZURE_OPENAI_API_KEY` environment variable will be used if available. |  `None`  
+`openai_client` |  `AsyncAzureOpenAI | None` |  An existing [`AsyncAzureOpenAI`](https://github.com/openai/openai-python#microsoft-azure-openai) client to use. If provided, `base_url`, `api_key`, and `http_client` must be `None`. |  `None`  
+`http_client` |  `AsyncClient | None` |  An existing `httpx.AsyncClient` to use for making HTTP requests. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/azure.py`
+
+    
+    
+     54
+     55
+     56
+     57
+     58
+     59
+     60
+     61
+     62
+     63
+     64
+     65
+     66
+     67
+     68
+     69
+     70
+     71
+     72
+     73
+     74
+     75
+     76
+     77
+     78
+     79
+     80
+     81
+     82
+     83
+     84
+     85
+     86
+     87
+     88
+     89
+     90
+     91
+     92
+     93
+     94
+     95
+     96
+     97
+     98
+     99
+    100
+    101
+    102
+    103
+    104
+    105
+    106
+    107
+
+|
+
+    
+    
+    def __init__(
+        self,
+        *,
+        azure_endpoint: str | None = None,
+        api_version: str | None = None,
+        api_key: str | None = None,
+        openai_client: AsyncAzureOpenAI | None = None,
+        http_client: httpx.AsyncClient | None = None,
+    ) -> None:
+        """Create a new Azure provider.
+    
+        Args:
+            azure_endpoint: The Azure endpoint to use for authentication, if not provided, the `AZURE_OPENAI_ENDPOINT`
+                environment variable will be used if available.
+            api_version: The API version to use for authentication, if not provided, the `OPENAI_API_VERSION`
+                environment variable will be used if available.
+            api_key: The API key to use for authentication, if not provided, the `AZURE_OPENAI_API_KEY` environment variable
+                will be used if available.
+            openai_client: An existing
+                [`AsyncAzureOpenAI`](https://github.com/openai/openai-python#microsoft-azure-openai)
+                client to use. If provided, `base_url`, `api_key`, and `http_client` must be `None`.
+            http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+        """
+        if openai_client is not None:
+            assert azure_endpoint is None, 'Cannot provide both `openai_client` and `azure_endpoint`'
+            assert http_client is None, 'Cannot provide both `openai_client` and `http_client`'
+            assert api_key is None, 'Cannot provide both `openai_client` and `api_key`'
+            self._base_url = str(openai_client.base_url)
+            self._client = openai_client
+        else:
+            azure_endpoint = azure_endpoint or os.getenv('AZURE_OPENAI_ENDPOINT')
+            if not azure_endpoint:  # pragma: no cover
+                raise UserError(
+                    'Must provide one of the `azure_endpoint` argument or the `AZURE_OPENAI_ENDPOINT` environment variable'
+                )
+    
+            if not api_key and 'OPENAI_API_KEY' not in os.environ:  # pragma: no cover
+                raise UserError(
+                    'Must provide one of the `api_key` argument or the `OPENAI_API_KEY` environment variable'
+                )
+    
+            if not api_version and 'OPENAI_API_VERSION' not in os.environ:  # pragma: no cover
+                raise UserError(
+                    'Must provide one of the `api_version` argument or the `OPENAI_API_VERSION` environment variable'
+                )
+    
+            http_client = http_client or cached_async_http_client(provider='azure')
+            self._client = AsyncAzureOpenAI(
+                azure_endpoint=azure_endpoint,
+                api_key=api_key,
+                api_version=api_version,
+                http_client=http_client,
+            )
+            self._base_url = str(self._client.base_url)
+      
+  
+---|---  
+  
+###  CohereProvider
+
+Bases: `Provider[AsyncClientV2]`
+
+Provider for Cohere API.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/cohere.py`
+
+    
+    
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+
+|
+
+    
+    
+    class CohereProvider(Provider[AsyncClientV2]):
+        """Provider for Cohere API."""
+    
+        @property
+        def name(self) -> str:
+            return 'cohere'
+    
+        @property
+        def base_url(self) -> str:
+            client_wrapper = self.client._client_wrapper  # type: ignore
+            return str(client_wrapper.get_base_url())
+    
+        @property
+        def client(self) -> AsyncClientV2:
+            return self._client
+    
+        def __init__(
+            self,
+            *,
+            api_key: str | None = None,
+            cohere_client: AsyncClientV2 | None = None,
+            http_client: AsyncHTTPClient | None = None,
+        ) -> None:
+            """Create a new Cohere provider.
+    
+            Args:
+                api_key: The API key to use for authentication, if not provided, the `CO_API_KEY` environment variable
+                    will be used if available.
+                cohere_client: An existing
+                    [AsyncClientV2](https://github.com/cohere-ai/cohere-python)
+                    client to use. If provided, `api_key` and `http_client` must be `None`.
+                http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+            """
+            if cohere_client is not None:
+                assert http_client is None, 'Cannot provide both `cohere_client` and `http_client`'
+                assert api_key is None, 'Cannot provide both `cohere_client` and `api_key`'
+                self._client = cohere_client
+            else:
+                api_key = api_key or os.environ.get('CO_API_KEY')
+                if not api_key:
+                    raise UserError(
+                        'Set the `CO_API_KEY` environment variable or pass it via `CohereProvider(api_key=...)`'
+                        'to use the Cohere provider.'
+                    )
+    
+                base_url = os.environ.get('CO_BASE_URL')
+                if http_client is not None:
+                    self._client = AsyncClientV2(api_key=api_key, httpx_client=http_client, base_url=base_url)
+                else:
+                    http_client = cached_async_http_client(provider='cohere')
+                    self._client = AsyncClientV2(api_key=api_key, httpx_client=http_client, base_url=base_url)
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(
+        *,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        cohere_client: AsyncClientV2 | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+
+Create a new Cohere provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`api_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The API key to use for authentication, if not provided, the `CO_API_KEY` environment variable will be used if available. |  `None`  
+`cohere_client` |  `AsyncClientV2 | None` |  An existing [AsyncClientV2](https://github.com/cohere-ai/cohere-python) client to use. If provided, `api_key` and `http_client` must be `None`. |  `None`  
+`http_client` |  `AsyncClient | None` |  An existing `httpx.AsyncClient` to use for making HTTP requests. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/cohere.py`
+
+    
+    
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+
+|
+
+    
+    
+    def __init__(
+        self,
+        *,
+        api_key: str | None = None,
+        cohere_client: AsyncClientV2 | None = None,
+        http_client: AsyncHTTPClient | None = None,
+    ) -> None:
+        """Create a new Cohere provider.
+    
+        Args:
+            api_key: The API key to use for authentication, if not provided, the `CO_API_KEY` environment variable
+                will be used if available.
+            cohere_client: An existing
+                [AsyncClientV2](https://github.com/cohere-ai/cohere-python)
+                client to use. If provided, `api_key` and `http_client` must be `None`.
+            http_client: An existing `httpx.AsyncClient` to use for making HTTP requests.
+        """
+        if cohere_client is not None:
+            assert http_client is None, 'Cannot provide both `cohere_client` and `http_client`'
+            assert api_key is None, 'Cannot provide both `cohere_client` and `api_key`'
+            self._client = cohere_client
+        else:
+            api_key = api_key or os.environ.get('CO_API_KEY')
+            if not api_key:
+                raise UserError(
+                    'Set the `CO_API_KEY` environment variable or pass it via `CohereProvider(api_key=...)`'
+                    'to use the Cohere provider.'
+                )
+    
+            base_url = os.environ.get('CO_BASE_URL')
+            if http_client is not None:
+                self._client = AsyncClientV2(api_key=api_key, httpx_client=http_client, base_url=base_url)
+            else:
+                http_client = cached_async_http_client(provider='cohere')
+                self._client = AsyncClientV2(api_key=api_key, httpx_client=http_client, base_url=base_url)
+      
+  
+---|---  
+  
+###  MistralProvider
+
+Bases: `Provider[Mistral]`
+
+Provider for Mistral API.
+
+Source code in `pydantic_ai_slim/pydantic_ai/providers/mistral.py`
+
+    
+    
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+
+|
+
+    
+    
+    class MistralProvider(Provider[Mistral]):
+        """Provider for Mistral API."""
+    
+        @property
+        def name(self) -> str:
+            return 'mistral'
+    
+        @property
+        def base_url(self) -> str:
+            return self.client.sdk_configuration.get_server_details()[0]
+    
+        @property
+        def client(self) -> Mistral:
+            return self._client
+    
+        @overload
+        def __init__(self, *, mistral_client: Mistral | None = None) -> None: ...
+    
+        @overload
+        def __init__(self, *, api_key: str | None = None, http_client: AsyncHTTPClient | None = None) -> None: ...
+    
+        def __init__(
+            self,
+            *,
+            api_key: str | None = None,
+            mistral_client: Mistral | None = None,
+            http_client: AsyncHTTPClient | None = None,
+        ) -> None:
+            """Create a new Mistral provider.
+    
+            Args:
+                api_key: The API key to use for authentication, if not provided, the `MISTRAL_API_KEY` environment variable
+                    will be used if available.
+                mistral_client: An existing `Mistral` client to use, if provided, `api_key` and `http_client` must be `None`.
+                http_client: An existing async client to use for making HTTP requests.
+            """
+            if mistral_client is not None:
+                assert http_client is None, 'Cannot provide both `mistral_client` and `http_client`'
+                assert api_key is None, 'Cannot provide both `mistral_client` and `api_key`'
+                self._client = mistral_client
+            else:
+                api_key = api_key or os.environ.get('MISTRAL_API_KEY')
+    
+                if not api_key:
+                    raise UserError(
+                        'Set the `MISTRAL_API_KEY` environment variable or pass it via `MistralProvider(api_key=...)`'
+                        'to use the Mistral provider.'
+                    )
+                elif http_client is not None:
+                    self._client = Mistral(api_key=api_key, async_client=http_client)
+                else:
+                    http_client = cached_async_http_client(provider='mistral')
+                    self._client = Mistral(api_key=api_key, async_client=http_client)
+      
+  
+---|---  
+  
+####  __init__
+
+    
+    
+    __init__(*, mistral_client: Mistral | None = None) -> None
+    
+    
+    
+    __init__(
+        *,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+    
+    
+    __init__(
+        *,
+        api_key: [str](https://docs.python.org/3/library/stdtypes.html#str) | None = None,
+        mistral_client: Mistral | None = None,
+        http_client: AsyncClient | None = None
+    ) -> None
+    
+
+Create a new Mistral provider.
+
+Parameters:
+
+Name | Type | Description | Default  
+---|---|---|---  
+`api_key` |  `[str](https://docs.python.org/3/library/stdtypes.html#str) | None` |  The API key to use for authentication, if not provided, the `MISTRAL_API_KEY` environment variable will be used if available. |  `None`  
+`mistral_client` |  `Mistral | None` |  An existing `Mistral` client to use, if provided, `api_key` and `http_client` must be `None`. |  `None`  
+`http_client` |  `AsyncClient | None` |  An existing async client to use for making HTTP requests. |  `None`  
+  
+Source code in `pydantic_ai_slim/pydantic_ai/providers/mistral.py`
+
+    
+    
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+
+|
+
+    
+    
+    def __init__(
+        self,
+        *,
+        api_key: str | None = None,
+        mistral_client: Mistral | None = None,
+        http_client: AsyncHTTPClient | None = None,
+    ) -> None:
+        """Create a new Mistral provider.
+    
+        Args:
+            api_key: The API key to use for authentication, if not provided, the `MISTRAL_API_KEY` environment variable
+                will be used if available.
+            mistral_client: An existing `Mistral` client to use, if provided, `api_key` and `http_client` must be `None`.
+            http_client: An existing async client to use for making HTTP requests.
+        """
+        if mistral_client is not None:
+            assert http_client is None, 'Cannot provide both `mistral_client` and `http_client`'
+            assert api_key is None, 'Cannot provide both `mistral_client` and `api_key`'
+            self._client = mistral_client
+        else:
+            api_key = api_key or os.environ.get('MISTRAL_API_KEY')
+    
+            if not api_key:
+                raise UserError(
+                    'Set the `MISTRAL_API_KEY` environment variable or pass it via `MistralProvider(api_key=...)`'
+                    'to use the Mistral provider.'
+                )
+            elif http_client is not None:
+                self._client = Mistral(api_key=api_key, async_client=http_client)
+            else:
+                http_client = cached_async_http_client(provider='mistral')
+                self._client = Mistral(api_key=api_key, async_client=http_client)
+      
+  
+---|---  
+  
+© Pydantic Services Inc. 2024 to present
+
